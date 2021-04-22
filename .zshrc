@@ -20,6 +20,8 @@ zplug "plugins/gitfast",   from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
+zplug "plugins/npm", from:oh-my-zsh
+zplug "plugins/yarn", from:oh-my-zsh
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
