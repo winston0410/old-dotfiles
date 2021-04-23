@@ -18,5 +18,5 @@ nnoremap <silent> <leader><Bslash> :call NERDTreeToggleAndRefresh()<CR>
 
 augroup DIRCHANGE
     au!
-    autocmd DirChanged tabpage :call RefreshNERDTree()
+    autocmd DirChanged tabpage silent :call RefreshNERDTree()
 augroup END
