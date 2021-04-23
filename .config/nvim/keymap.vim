@@ -11,6 +11,9 @@ nnoremap <leader>y "+y
 "Paste from clipboard buffer
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
+"Remap Y to y$
+nnoremap Y <NOP>
+nnoremap Y y$
 "Keymap config for splitting panes"
 nnoremap <leader>j <C-W><C-J>
 nnoremap <leader>k <C-W><C-K>

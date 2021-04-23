@@ -32,6 +32,7 @@ Plug 'preservim/nerdcommenter'
 call plug#end()
 "Make NerdTree shows all hidden files"
 source /Users/hugosum/.config/nvim/values.vim
+source /Users/hugosum/.config/nvim/command-alias.vim
 source /Users/hugosum/.config/nvim/keymap.vim
 source /Users/hugosum/.config/nvim/terminal.vim
 source /Users/hugosum/.config/nvim/nerd-tree.vim
