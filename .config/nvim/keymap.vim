@@ -23,8 +23,8 @@ map <Leader> <Plug>(easymotion-prefix)
 nmap <Leader><Leader> <Plug>(easymotion-overwin-w)
 
 "Toggle terminal"
-nnoremap <silent> <leader>t :ToggleTabTerminal<CR>
-tnoremap <silent> <leader>t <C-\><C-n>:ToggleTabTerminal<CR>
+nnoremap <silent> <C-t> :ToggleTabTerminal<CR>
+tnoremap <silent> <C-t> <C-\><C-n>:ToggleTabTerminal<CR>
 "Comment out code"
 nmap <leader>/ <plug>NERDCommenterToggle<CR>
 "tab control"
