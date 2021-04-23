@@ -4,7 +4,7 @@ imap ;; <Esc>
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 "Keymap for launching NerdTree"
-nnoremap <silent> <leader><Bslash> :NERDTreeToggle <CR> 
+
 nnoremap <D-K> <NOP>
 "Keymap config for splitting panes"
 nnoremap <leader>j <C-W><C-J>

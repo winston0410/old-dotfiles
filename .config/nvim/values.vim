@@ -1,4 +1,9 @@
 set encoding=UTF-8
+"Disable file backup
+set nobackup
+set nowritebackup
+"Increase the height of command
+set cmdheight=2
 "Add absolute line number"
 set number
 "Set default direction for splitting panes"
@@ -11,6 +16,8 @@ set autoindent
 set smartindent
 set tabstop=2
 set signcolumn=yes
+"Automactically change directory in different buffer
+"set autochdir
 "values for vim gitgutter"
 let g:gitgutter_grep=''
 let g:gitgutter_sign_added = ''
