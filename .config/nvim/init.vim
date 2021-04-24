@@ -1,3 +1,6 @@
+source $HOME/.config/nvim/keymap.vim
+source $HOME/.config/nvim/command-alias.vim
+source $HOME/.config/nvim/terminal.vim
 "Specify a directory for plugins"
 call plug#begin('~/.config/nvim/plugged')
 
@@ -8,20 +11,18 @@ Plug 'itchyny/lightline.vim'
 "Multiple language support"
 Plug 'sheerun/vim-polyglot'
 "Togglable terminal"
-Plug 'caenrique/nvim-toggle-terminal'
-"Plug 'machakann/vim-sandwich'
-Plug 'easymotion/vim-easymotion'
-"NerdTree File Menu"
-Plug 'preservim/nerdtree' | 
-	\ Plug 'Xuyuanp/nerdtree-git-plugin'
+source $HOME/.config/nvim/toggle-terminal.vim
+Plug 'machakann/vim-sandwich'
+source $HOME/.config/nvim/easy-motion.vim
+source $HOME/.config/nvim/nerd-tree.vim
+
 Plug 'ryanoasis/vim-devicons'
 "ALE"
 "Plug 'maximbaz/lightline-ale'
 "Plug 'dense-analysis/ale'
-"Git"
-Plug 'https://github.com/airblade/vim-gitgutter.git'
+source $HOME/.config/nvim/gitgutter.vim
 "Comment out code"
-Plug 'preservim/nerdcommenter'
+source $HOME/.config/nvim/nerd-commenter.vim
 "Auto resizing"
 "Plug 'camspiers/animate.vim'
 "Plug 'camspiers/lens.vim'
@@ -31,17 +32,11 @@ Plug 'preservim/nerdcommenter'
 "Initialize plugin system"
 call plug#end()
 "Make NerdTree shows all hidden files"
-source /Users/hugosum/.config/nvim/values.vim
-source /Users/hugosum/.config/nvim/command-alias.vim
-source /Users/hugosum/.config/nvim/keymap.vim
-source /Users/hugosum/.config/nvim/terminal.vim
-source /Users/hugosum/.config/nvim/nerd-tree.vim
+source $HOME/.config/nvim/values.vim
 
 let g:ale_fix_on_save = 1
 "onedark theme"
 if !exists('g:syntax_on')
 	syntax enable
 endif
-"syntax on
 colorscheme onedark
-"set guifont=HackNerdFontCompleteM-Regular:h22

@@ -1,3 +1,5 @@
+Plug 'preservim/nerdtree' | 
+  \ Plug 'Xuyuanp/nerdtree-git-plugin'
 let NERDTreeShowHidden=1
 let g:NERDTreeWinPos = "left"
 let NERDTreeMinimalUI=1
