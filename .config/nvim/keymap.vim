@@ -3,9 +3,7 @@ imap ;; <Esc>
 "Use space as leader
 nnoremap <SPACE> <Nop>
 let mapleader=" "
-"Keymap for launching NerdTree"
 
-nnoremap <D-K> <NOP>
 "Copy into clipboard buffer
 nnoremap <leader>y "+y
 "Paste from clipboard buffer
@@ -14,6 +12,12 @@ nnoremap <leader>P "+P
 "Remap Y to y$
 nnoremap Y <NOP>
 nnoremap Y y$
+"Make s and S noop for using vim sandwich
+nnoremap S <NOP>
+nnoremap s <NOP>
+"Redo with r
+"noremap r :redo <CR>
+"noremap <C-R> <NOP>
 "Keymap config for splitting panes"
 nnoremap <leader>j <C-W><C-J>
 nnoremap <leader>k <C-W><C-K>
