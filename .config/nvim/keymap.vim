@@ -1,5 +1,7 @@
 "iMap as to esc
 imap ;; <Esc>
+vmap ;; <Esc> 
+smap ;; <Esc>
 "Use space as leader
 nnoremap <SPACE> <Nop>
 let mapleader=" "
@@ -15,6 +17,9 @@ nnoremap Y y$
 "Make s and S noop for using vim sandwich
 nnoremap S <NOP>
 nnoremap s <NOP>
+"Remain in normal mode with o and O
+nnoremap o o<Esc>
+nnoremap O O<Esc>
 "Redo with r
 "noremap r :redo <CR>
 "noremap <C-R> <NOP>
