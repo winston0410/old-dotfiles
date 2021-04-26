@@ -25,6 +25,9 @@ zplug "plugins/npm", from:oh-my-zsh
 zplug "plugins/yarn", from:oh-my-zsh
 zplug "plugins/nvm", from:oh-my-zsh
 zplug "plugins/git-flow", from:oh-my-zsh
+zplug "plugins/deno", from:oh-my-zsh
+#zplug "plugins/tmux", from:oh-my-zsh
+zplug "plugins/brew", from:oh-my-zsh
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
