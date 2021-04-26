@@ -1,6 +1,6 @@
 "iMap as to esc
 imap ;; <Esc>
-vmap ;; <Esc> 
+vmap ;; <Esc>
 smap ;; <Esc>
 "Use space as leader
 nnoremap <SPACE> <Nop>
