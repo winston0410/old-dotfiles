@@ -1,5 +1,7 @@
 "Git"
-Plug 'https://github.com/airblade/vim-gitgutter.git'
+"Plug 'https://github.com/airblade/vim-gitgutter.git'
+
+let g:gitgutter_map_keys = 0
 
 "values for vim gitgutter"
 let g:gitgutter_grep=''

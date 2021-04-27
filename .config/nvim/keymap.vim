@@ -24,8 +24,8 @@ nnoremap O O<Esc>
 "noremap r :redo <CR>
 "noremap <C-R> <NOP>
 "Undo with <C-U>
-nnoremap <C-U> <undo>
-nnoremap u <NOP>
+"nnoremap <C-U> <undo>
+"nnoremap u <NOP>
 "Keymap config for splitting panes"
 nnoremap <leader>j <C-W><C-J>
 nnoremap <leader>k <C-W><C-K>
@@ -37,7 +37,7 @@ nnoremap <silent> <leader>q :source $MYVIMRC <BAR> :echo "Config updated"<CR>
 "tab control"
 nnoremap tn :tabnew 
 nnoremap tc :tabclose <CR>
-"Disable mappings 
-"gitgutter
-let g:gitgutter_map_keys = 0
-"nerdcommenter
+
+"Ex-mode
+cnoremap <expr> <c-n> wildmenumode() ? "\<c-n>" : "\<down>"
+cnoremap <expr> <c-p> wildmenumode() ? "\<c-p>" : "\<up>"

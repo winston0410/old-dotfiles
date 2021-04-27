@@ -1,8 +1,24 @@
-Plug 'preservim/nerdtree' | 
-  \ Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'preservim/nerdtree' | 
+  "\ Plug 'Xuyuanp/nerdtree-git-plugin'
 let NERDTreeShowHidden=1
 let g:NERDTreeWinPos = "left"
 let NERDTreeMinimalUI=1
+
+"nerdtree-git-plugin"
+let g:NERDTreeGitStatusUseNerdFonts = 1
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
+
 function RefreshNERDTree()
     if g:NERDTree.IsOpen()
         :NERDTreeRefreshRoot
