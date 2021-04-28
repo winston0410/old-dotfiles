@@ -19,7 +19,8 @@ set splitright
 "set clipboard=unnamed
 set shiftwidth=2
 set autoindent
-set cindent
+"set cindent
+filetype plugin indent on
 set nosmartindent
 set tabstop=4
 set signcolumn=yes

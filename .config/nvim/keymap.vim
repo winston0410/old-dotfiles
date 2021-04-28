@@ -20,6 +20,9 @@ nnoremap s <NOP>
 "Remain in normal mode with o and O
 nnoremap o o<Esc>
 nnoremap O O<Esc>
+"Change after open to indent cursor position
+nnoremap oi o<Esc>cc
+nnoremap Oi O<Esc>cc
 "Redo with r
 "noremap r :redo <CR>
 "noremap <C-R> <NOP>

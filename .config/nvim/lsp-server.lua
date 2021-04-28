@@ -43,42 +43,39 @@ local function init(paq)
 
   lspconfig.tsserver.setup{
 	init_options = {
-	  --on_attach = function()
-		--print('language server now attached')
-	  --end,
-	  linters = {
-		sourceName = "eslint",
-		command = "eslint_d",
-		rootPatterns = {".eslintrc.js", "package.json"},
-		debounce = 100,
-		args = {"--stdin", "--stdin-filename", "%filepath", "--format", "json"},
-		parseJson = {
-		  errorsRoot = "[0].messages",
-		  line = "line",
-		  column = "column",
-		  endLine = "endLine",
-		  endColumn = "endColumn",
-		  message = "${message} [${ruleId}]",
-		  security = "severity"
+		linters = {
+		  sourceName = "eslint",
+		  command = "eslint_d",
+		  rootPatterns = {".eslintrc.js", "package.json"},
+		  debounce = 100,
+		  args = {"--stdin", "--stdin-filename", "%filepath", "--format", "json"},
+		  parseJson = {
+			errorsRoot = "[0].messages",
+			line = "line",
+			column = "column",
+			endLine = "endLine",
+			endColumn = "endColumn",
+			message = "${message} [${ruleId}]",
+			security = "severity"
+		  },
+		  securities = {[2] = "error", [1] = "warning"}
 		},
-		securities = {[2] = "error", [1] = "warning"}
-	  },
-	  formatters = {
-		prettier = {command = "prettier", args = {"--stdin-filepath", "%filepath"}},
-		formatFileTypes = {
-		  typescript = "prettier",
-		  typescriptreact = "prettier"
+		formatters = {
+		  prettier = {command = "prettier", args = {"--stdin-filepath", "%filepath"}},
+		  formatFileTypes = {
+			typescript = "prettier",
+			typescriptreact = "prettier"
+		  }
 		}
 	  }
 	}
+	lspconfig.dockerls.setup{}
+	lspconfig.purescriptls.setup{}
+	lspconfig.yamlls.setup{}
+
+  end
+
+  return {
+	init = init
   }
-  lspconfig.dockerls.setup{}
-  lspconfig.purescriptls.setup{}
-  lspconfig.yamlls.setup{}
-
-end
-
-return {
-  init = init
-}
 
