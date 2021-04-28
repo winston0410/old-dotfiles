@@ -3,6 +3,8 @@ set termguicolors
 "Wrap code without breaking word boundary
 set wrap
 set linebreak
+"Highlight current line
+set cursorline
 "Disable file backup
 set nobackup
 set nowritebackup
@@ -21,8 +23,6 @@ set cindent
 set nosmartindent
 set tabstop=4
 set signcolumn=yes
-"Automactically change directory in different buffer
-"set autochdir
 "For better performance"
 set lazyredraw
 "Minimum rows above and below cursor

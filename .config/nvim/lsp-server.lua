@@ -43,9 +43,9 @@ local function init(paq)
 
   lspconfig.tsserver.setup{
 	init_options = {
-	  on_attach = function()
-		print('language server now attached')
-	  end,
+	  --on_attach = function()
+		--print('language server now attached')
+	  --end,
 	  linters = {
 		sourceName = "eslint",
 		command = "eslint_d",

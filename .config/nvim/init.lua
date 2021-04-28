@@ -15,13 +15,18 @@ require('lsp-server').init(paq)
 paq{'nvim-lua/completion-nvim'}
 paq{'nvim-treesitter/nvim-treesitter'}
 paq{'sainnhe/edge'}
-paq{'itchyny/lightline.vim'}
-paq{'ryanoasis/vim-devicons'}
+--paq{'itchyny/lightline.vim'}
+paq{'glepnir/galaxyline.nvim', branch='main'}
+--paq{'ryanoasis/vim-devicons'}
+paq{'kyazdani42/nvim-web-devicons'}
 require('nerd-commenter').init(paq)
 require('easy-motion').init(paq)
 require('nerd-tree').init(paq)
 require('gitgutter').init(paq)
 require('toggleterm').init(paq)
+require('indent-blankline').init(paq)
+require('telescope-nvim').init(paq)
+
 vim.cmd [[ source $HOME/.config/nvim/nerd-tree.vim ]]
 vim.cmd [[ source $HOME/.config/nvim/gitgutter.vim ]]
 
