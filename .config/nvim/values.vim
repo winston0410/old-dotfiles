@@ -1,5 +1,8 @@
 set encoding=UTF-8
 set termguicolors
+"Wrap code without breaking word boundary
+set wrap
+set linebreak
 "Disable file backup
 set nobackup
 set nowritebackup
@@ -12,11 +15,11 @@ set splitbelow
 set splitright
 "Make yanked content accessible in clipboard"
 "set clipboard=unnamed
-set shiftwidth=4
+set shiftwidth=2
 set autoindent
 set cindent
 set nosmartindent
-set tabstop=2
+set tabstop=4
 set signcolumn=yes
 "Automactically change directory in different buffer
 "set autochdir
