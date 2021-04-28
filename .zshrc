@@ -1,6 +1,7 @@
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
 # Alias
+alias vi="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
