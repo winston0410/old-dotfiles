@@ -1,3 +1,5 @@
+package.path = package.path .. ";" .. vim.fn.getenv("HOME") .. "/.config/nvim/?.lua"
+
 vim.cmd [[ source $HOME/.config/nvim/keymap.vim ]]
 vim.cmd [[ source $HOME/.config/nvim/command-alias.vim ]]
 vim.cmd [[ source $HOME/.config/nvim/terminal.vim ]]
