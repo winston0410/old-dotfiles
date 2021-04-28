@@ -2,6 +2,7 @@ set encoding=UTF-8
 set termguicolors
 "Wrap code without breaking word boundary
 set wrap
+set textwidth=72
 set linebreak
 "Highlight current line
 set cursorline
