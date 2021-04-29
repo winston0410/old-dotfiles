@@ -29,6 +29,9 @@ nnoremap Oi O<Esc>cc
 "Undo with <C-U>
 "nnoremap <C-U> <undo>
 "nnoremap u <NOP>
+"Paste in visual mode without copying
+xnoremap p pgvy
+xnoremap P Pgvy
 "Keymap config for splitting panes"
 nnoremap <leader>j <C-W><C-J>
 nnoremap <leader>k <C-W><C-K>
