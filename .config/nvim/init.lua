@@ -10,10 +10,10 @@ paq{'savq/paq-nvim', opt=true}     -- Let Paq manage itself
 
 paq{'wbthomason/packer.nvim'}
 require('plugins.lsp-server').init(paq)
-require('plugins.lspsaga').init(paq)
+--require('plugins.lspsaga').init(paq)
 require('plugins.completion').init(paq)
 paq{'nvim-treesitter/nvim-treesitter'}
-paq{'sainnhe/edge'}
+require('plugins.edge').init(paq)
 paq{'kyazdani42/nvim-web-devicons'}
 require('plugins.nerd-commenter').init(paq)
 require('plugins.easy-motion').init(paq)
@@ -38,3 +38,4 @@ if !exists('g:syntax_on')
 	endif
 	colorscheme edge
 	]]
+vim.cmd [[ source $HOME/.config/nvim/highlight.vim ]]

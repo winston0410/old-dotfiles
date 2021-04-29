@@ -1,6 +1,7 @@
 local function init(paq)
 vim.o.completeopt = "menuone,noselect"
 
+paq{'hrsh7th/vim-vsnip'}
 paq{'hrsh7th/nvim-compe'}
 
 require'compe'.setup {
@@ -23,7 +24,7 @@ require'compe'.setup {
     calc = true;
     nvim_lsp = true;
     nvim_lua = true;
-    --vsnip = true;
+	vsnip = true;
   };
 }
 end
@@ -31,13 +32,3 @@ end
 return {
   init = init
 }
-
-  --paq{'nvim-lua/completion-nvim'}
-  --let vim.g.completion_enable_snippet = 'UltiSnips'
-  --vim.g.completion_enable_auto_hover = 0
-  --let vim.g.completion_confirm_key = 'UltiSnips'
-  --vim.g.completion_enable_auto_signature = 0
-
-  --vim.cmd([[
-  --autocmd BufEnter * lua require'completion'.on_attach()
-  --]])
