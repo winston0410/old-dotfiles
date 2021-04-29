@@ -14,6 +14,8 @@ local function init(paq)
   vim.g.nvim_tree_gitignore = 1
   vim.g.nvim_tree_disable_keybindings = 0
   vim.g.nvim_tree_lsp_diagnostics = 1
+  vim.g.nvim_tree_ignore = { '.git', 'node_modules' } 
+
   vim.api.nvim_set_keymap('n', '<leader><Bslash>', [[ :lua require('plugins.nvim-tree').toggle_and_refresh()<CR>]], {silent = true, noremap = true})
 end
 

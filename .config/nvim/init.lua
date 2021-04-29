@@ -14,16 +14,17 @@ require('plugins.lspsaga').init(paq)
 paq{'nvim-lua/completion-nvim'}
 paq{'nvim-treesitter/nvim-treesitter'}
 paq{'sainnhe/edge'}
-paq{'itchyny/lightline.vim'}
---paq{'glepnir/galaxyline.nvim', branch='main'}
 paq{'kyazdani42/nvim-web-devicons'}
 require('plugins.nerd-commenter').init(paq)
 require('plugins.easy-motion').init(paq)
 require('plugins.nvim-tree').init(paq)
+require('plugins.gitsigns').init(paq)
 --require('gitgutter').init(paq)
-require('plugins.toggleterm').init(paq)
+--require('plugins.toggleterm').init(paq)
 require('plugins.indent-blankline').init(paq)
 require('plugins.telescope-nvim').init(paq)
+require('plugins.galaxyline').init(paq)
+require('plugins.autopairs').init(paq)
 --vim.cmd [[ source $HOME/.config/nvim/gitgutter.vim ]]
 
 local treesitter = require('nvim-treesitter.configs')

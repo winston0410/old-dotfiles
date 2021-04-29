@@ -35,7 +35,7 @@ nnoremap <leader>k <C-W><C-K>
 nnoremap <leader>l <C-W><C-L>
 nnoremap <leader>h <C-W><C-H>
 "Load new nvim config"
-nnoremap <silent> <leader>q :source $MYVIMRC <BAR> :echo "Config updated"<CR>
+nnoremap <silent> <leader>q :luafile $MYVIMRC<CR> 
 
 "tab control"
 nnoremap tn :tabnew 

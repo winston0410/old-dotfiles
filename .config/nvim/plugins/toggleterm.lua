@@ -1,18 +1,18 @@
 local function init(paq)
-	--paq{'akinsho/nvim-toggleterm.lua'}
-	--require("toggleterm").setup{
-		--size = 20
-		--direction = 'horizontal'
-		--}
+  paq{'akinsho/nvim-toggleterm.lua'}
+  require("toggleterm").setup{
+	size = 30,
+	direction = 'horizontal',
+	hide_numbers = true
+  }
 
-		paq{'caenrique/nvim-toggle-terminal'}
+end
 
-		vim.cmd [[ nnoremap <silent> <C-t> :ToggleTabTerminal<CR> ]]
-		vim.cmd [[ tnoremap <silent> <C-t> <C-\><C-n>:ToggleTabTerminal<CR> ]]
+return {
+  init = init
+}
 
-	end
+--paq{'caenrique/nvim-toggle-terminal'}
 
-	return {
-		init = init
-	}
-
+--vim.cmd [[ nnoremap <silent> <C-t> :ToggleTabTerminal<CR> ]]
+--vim.cmd [[ tnoremap <silent> <C-t> <C-\><C-n>:ToggleTabTerminal<CR> ]]
