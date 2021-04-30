@@ -1,18 +1,20 @@
 #Install pnpm
 npm install -g pnpm
 #Install all global packages
-pnpm install -g autocannon
-#Linter and formatter
-pnpm install -g prettier
-pnpm install -g eslint eslint_d
-#Language server
-pnpm install -g vscode-css-languageserver-bin
-pnpm install -g dockerfile-language-server-nodejs
-pnpm install -g graphql-language-service-cli
-pnpm install -g vscode-html-languageserver-bin
-pnpm install -g vscode-json-languageserver
-pnpm install -g purescript-language-server
-pnpm install -g svelte-language-server
-pnpm install -g typescript typescript-language-server
-pnpm install -g vim-language-server
-pnpm install -g vls
+PACKAGES=$(cat <<-END
+vscode-css-languageserver-bin
+dockerfile-language-server-nodejs
+graphql graphql-language-service-cli
+vscode-html-languageserver-bin
+vscode-json-languageserver
+purescript-language-server
+svelte-language-server
+typescript typescript-language-server
+vim-language-server
+vls
+prettier
+eslint_d
+END
+)
+
+pnpm install -g ${PACKAGES}
