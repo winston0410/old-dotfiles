@@ -26,6 +26,7 @@ END
 
 FORMATTER=$(cat <<-END
 prettier
+fixjson
 END
 )
 
