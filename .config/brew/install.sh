@@ -11,6 +11,10 @@ zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
 zplug
+efm-langserver
+luarocks
+shellcheck
+dotenv-linter
 END
 )
 
