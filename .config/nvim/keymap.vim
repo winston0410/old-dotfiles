@@ -1,22 +1,25 @@
 "iMap as to esc
 imap ;; <Esc>
 vmap ;; <Esc>
-smap ;; <Esc>
+"smap ;; <Esc>
 "Use space as leader
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
 "Copy into clipboard buffer
 nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+"snoremap <leader>y "+y
+"xnoremap <leader>y "+y
 "Paste from clipboard buffer
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
-snoremap <leader>p "+p
-xnoremap <leader>p "+p
+"snoremap <leader>p "+p
+"xnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>P "+P
-snoremap <leader>P "+P
-xnoremap <leader>P "+P
+"snoremap <leader>P "+P
+"xnoremap <leader>P "+P
 "Remap Y to y$
 nnoremap Y <NOP>
 nnoremap Y y$
@@ -36,8 +39,8 @@ nnoremap Oi O<Esc>cc
 "nnoremap <C-U> <undo>
 "nnoremap u <NOP>
 "Paste in visual mode without copying
-xnoremap p pgvy
-xnoremap P Pgvy
+vnoremap p pgvy
+vnoremap P Pgvy
 "Keymap config for splitting panes"
 nnoremap <leader>j <C-W><C-J>
 nnoremap <leader>k <C-W><C-K>

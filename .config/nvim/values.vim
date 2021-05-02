@@ -1,7 +1,7 @@
 set encoding=UTF-8
 set termguicolors
 "Reduce time to wait for key combo
-set timeoutlen=500
+set timeoutlen=400
 "Wrap code without breaking word boundary
 set wrap
 set textwidth=72

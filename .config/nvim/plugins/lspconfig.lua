@@ -43,38 +43,36 @@ local function init(paq)
 
   lspconfig.tsserver.setup{
 	--on_attach=require'completion'.on_attach,
-	--linters = {
-	  --sourceName = "eslint",
-	  --command = "eslint_d",
-	  --rootPatterns = {".eslintrc.js", "package.json"},
-	  --debounce = 100,
-	  --args = {"--stdin", "--stdin-filename", "%filepath", "--format", "json"},
-	  --parseJson = {
-		--errorsRoot = "[0].messages",
-		--line = "line",
-		--column = "column",
-		--endLine = "endLine",
-		--endColumn = "endColumn",
-		--message = "${message} [${ruleId}]",
-		--security = "severity"
-	  --},
-	  --securities = {[2] = "error", [1] = "warning"}
-	--},
-	--formatters = {
-	  --prettier = {command = "prettier", args = {"--stdin-filepath", "%filepath"}},
-	  --formatFileTypes = {
-		--typescript = "prettier",
-		--typescriptreact = "prettier"
-	  --}
-	--}
   }
   lspconfig.dockerls.setup{}
   lspconfig.purescriptls.setup{}
   lspconfig.yamlls.setup{}
+  lspconfig.vimls.setup{}
 
+  local eslint = require('plugins.lsp-servers.eslint').config
+  lspconfig.efm.setup{
+	settings = {
+	  languages = {
+		javascript = { eslint },
+		javascriptreact = { eslint },
+		['javascript.jsx'] = { eslint },
+		typescript = { eslint },
+		typescriptreact = { eslint },
+		['typescript.jsx'] = { eslint },
+	  }
+	},
+	filetypes = {
+	  "javascript",
+	  "javascriptreact",
+	  "javascript.jsx",
+	  "typescript",
+	  "typescript.tsx",
+	  "typescriptreact"
+	}
+  }
+  lspconfig.dhall_lsp_server.setup{}
 end
 
 return {
   init = init
 }
-

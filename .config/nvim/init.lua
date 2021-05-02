@@ -9,10 +9,10 @@ local paq = require'paq-nvim'.paq  -- Import module and bind `paq` function
 paq{'savq/paq-nvim', opt=true}     -- Let Paq manage itself
 
 paq{'wbthomason/packer.nvim'}
-require('plugins.lsp-server').init(paq)
+require('plugins.lspconfig').init(paq)
 --require('plugins.lspsaga').init(paq)
 require('plugins.completion').init(paq)
-paq{'nvim-treesitter/nvim-treesitter'}
+require('plugins.treesitter').init(paq)
 require('plugins.edge').init(paq)
 paq{'kyazdani42/nvim-web-devicons'}
 require('plugins.nerd-commenter').init(paq)
@@ -24,13 +24,8 @@ require('plugins.indent-blankline').init(paq)
 require('plugins.telescope-nvim').init(paq)
 require('plugins.galaxyline').init(paq)
 require('plugins.autopairs').init(paq)
+require('plugins.formatter').init(paq)
 
-local treesitter = require('nvim-treesitter.configs')
-treesitter.setup {
-	highlight = {
-		enable = true
-	}
-}
 
 vim.cmd [[
 if !exists('g:syntax_on')
