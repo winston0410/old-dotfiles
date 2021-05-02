@@ -1,7 +1,6 @@
 local function init(paq)
   paq{'neovim/nvim-lspconfig'}
   local lspconfig = require('lspconfig')
-
   lspconfig.html.setup{}
   lspconfig.cssls.setup{}
   lspconfig.jsonls.setup{}
@@ -42,6 +41,7 @@ local function init(paq)
   }
 
   lspconfig.tsserver.setup{
+	root_dir = function() return vim.fn.getcwd() end
 	--on_attach=require'completion'.on_attach,
   }
   lspconfig.dockerls.setup{}
@@ -50,7 +50,10 @@ local function init(paq)
   lspconfig.vimls.setup{}
 
   local eslint = require('plugins.lsp-servers.eslint').config
+  local shellcheck = require('plugins.lsp-servers.shellcheck').config
+  local markdownlint = require('plugins.lsp-servers.markdownlint').config
   lspconfig.efm.setup{
+	root_dir = function() return vim.fn.getcwd() end,
 	settings = {
 	  languages = {
 		javascript = { eslint },
@@ -59,9 +62,15 @@ local function init(paq)
 		typescript = { eslint },
 		typescriptreact = { eslint },
 		['typescript.jsx'] = { eslint },
-	  }
+	  },
+	  sh = { shellcheck },
+	  zsh = { shellcheck },
+	  markdown = { markdownlint }
 	},
 	filetypes = {
+	  "sh",
+	  "zsh",
+	  "markdown",
 	  "javascript",
 	  "javascriptreact",
 	  "javascript.jsx",
