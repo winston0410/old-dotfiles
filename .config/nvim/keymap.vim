@@ -10,7 +10,13 @@ let mapleader=" "
 nnoremap <leader>y "+y
 "Paste from clipboard buffer
 nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+snoremap <leader>p "+p
+xnoremap <leader>p "+p
 nnoremap <leader>P "+P
+vnoremap <leader>P "+P
+snoremap <leader>P "+P
+xnoremap <leader>P "+P
 "Remap Y to y$
 nnoremap Y <NOP>
 nnoremap Y y$
