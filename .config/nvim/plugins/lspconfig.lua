@@ -10,7 +10,7 @@ local function init(paq)
   lspconfig.sqls.setup{}
   lspconfig.graphql.setup{}
   lspconfig.angularls.setup{}
-  lspconfig.bashls.setup{}
+  --lspconfig.bashls.setup{}
   lspconfig.sumneko_lua.setup{
 	--cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
 	settings = {
@@ -52,6 +52,9 @@ local function init(paq)
   local eslint = require('plugins.lsp-servers.eslint').config
   local shellcheck = require('plugins.lsp-servers.shellcheck').config
   local markdownlint = require('plugins.lsp-servers.markdownlint').config
+  local hadolint = require('plugins.lsp-servers.hadolint').config
+  local dotenv_linter = require('plugins.lsp-servers.dotenv_linter').config
+
   lspconfig.efm.setup{
 	root_dir = function() return vim.fn.getcwd() end,
 	settings = {
@@ -62,14 +65,18 @@ local function init(paq)
 		typescript = { eslint },
 		typescriptreact = { eslint },
 		['typescript.jsx'] = { eslint },
+		dockerfile = { hadolint },
+		sh = { shellcheck },
+		zsh = { shellcheck },
+		markdown = { markdownlint },
+		dotenv = { dotenv_linter },
 	  },
-	  sh = { shellcheck },
-	  zsh = { shellcheck },
-	  markdown = { markdownlint }
 	},
 	filetypes = {
+	  "dotenv",
 	  "sh",
 	  "zsh",
+	  "dockerfile",
 	  "markdown",
 	  "javascript",
 	  "javascriptreact",
