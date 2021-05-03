@@ -18,14 +18,17 @@ END
 
 LINTERS=$(cat <<-END
 eslint_d
-dockerfile_lint
-markdownlint
+markdownlint markdownlint-cli
 npm-package-json-lint
 END
 )
 
 FORMATTER=$(cat <<-END
 prettier
+prettier-plugin-sh
+prettier-plugin-toml
+svelte prettier-plugin-svelte
+@prettier/plugin-xml
 fixjson
 END
 )
