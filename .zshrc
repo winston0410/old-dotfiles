@@ -1,6 +1,7 @@
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
 # Alias
+alias ls="exa --icons"
 alias vi="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"

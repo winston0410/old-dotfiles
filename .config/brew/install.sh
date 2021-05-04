@@ -15,6 +15,11 @@ efm-langserver
 luarocks
 shellcheck
 dotenv-linter
+gcc
+llvm
+hadolint
+fzf
+exa
 END
 )
 
