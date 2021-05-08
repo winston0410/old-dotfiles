@@ -1,7 +1,9 @@
 "iMap as to esc
-imap ;; <Esc>
-vmap ;; <Esc>
-"smap ;; <Esc>
+" imap ;; <Esc>
+" imap <Tab> <Esc>
+" vmap ;; <Esc>
+" Revert back to previous cursor position
+inoremap <Esc> <Esc>`^
 "Use space as leader
 nnoremap <SPACE> <Nop>
 let mapleader=" "
@@ -11,13 +13,16 @@ nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 "snoremap <leader>y "+y
 "xnoremap <leader>y "+y
+" Auto indent paste content
+nnoremap p p`[v`]=
+nnoremap P P`[v`]=
 "Paste from clipboard buffer
-nnoremap <leader>p "+p
-vnoremap <leader>p "+p
+nnoremap <leader>p "+p`[v`]=
+vnoremap <leader>p "+p [v`]=
 "snoremap <leader>p "+p
 "xnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>P "+P
+nnoremap <leader>P "+P`[v`]=
+vnoremap <leader>P "+P`[v`]=
 "snoremap <leader>P "+P
 "xnoremap <leader>P "+P
 "Remap Y to y$
@@ -32,6 +37,8 @@ nnoremap O O<Esc>
 "Change after open to indent cursor position
 nnoremap oi o<Esc>cc
 nnoremap Oi O<Esc>cc
+" Break a line in normal mode
+nnoremap <C-J> i<CR><ESC>
 "Redo with r
 "noremap r :redo <CR>
 "noremap <C-R> <NOP>
@@ -56,3 +63,6 @@ nnoremap tc :tabclose <CR>
 "Ex-mode
 cnoremap <expr> <c-n> wildmenumode() ? "\<c-n>" : "\<down>"
 cnoremap <expr> <c-p> wildmenumode() ? "\<c-p>" : "\<up>"
+" Shortcut for substitute
+nnoremap gs :%s/
+vnoremap gs :s/
