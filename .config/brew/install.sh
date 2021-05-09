@@ -20,6 +20,7 @@ llvm
 hadolint
 fzf
 exa
+python
 END
 )
 
