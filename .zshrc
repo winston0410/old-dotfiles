@@ -6,13 +6,19 @@ alias vi="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# Use gcc10 instead of AppleClang
+alias gcc='gcc-10'
+alias cc='gcc-10'
+alias g++='g++-10'
+alias c++='c++-10'
+# Add pip3 alias
+alias pip='pip3'
 #Use pure prompt
 autoload -U promptinit; 
 
 promptinit
 prompt pure
 autoload -U compinit; 
-#eval "$(starship init zsh)"
 compinit -y
 # Plugins
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -33,7 +39,7 @@ zplug "plugins/brew", from:oh-my-zsh
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
-    if read -q; then
+    if read -r -q; then
         echo; zplug install
     else
         echo
@@ -43,9 +49,7 @@ zplug load
 #Non essential
 # Keybindings
 # Enter vi mode
-bindkey ';;' vi-cmd-mode
-ZVM_VI_ESCAPE_BINDKEY=jk
-
+bindkey '^[' vi-cmd-mode
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
