@@ -1,11 +1,11 @@
 env:
   LC_CTYPE: en_US.UTF-8
 window:
-  startup_mode: Maximized
+  startup_mode: Fullscreen
 font:
   normal:
     family: "Hack Nerd Font"
-  size: 24.0
+  size: 26.0
   use_thin_strokes: true
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -16,23 +16,28 @@ mouse:
       # This depends on your OS, on Mac it’s `open`
       program: open
     modifiers: Command
-# Colors (One Dark)
 colors:
+  ### Edge (Dark Default variant)
   primary:
-    background: '#282c34'
-    foreground: '#abb2bf'
-  cursor:
-    text:       CellBackground
-    cursor:     '#528bff' # syntax-cursor-color
-  selection:
-    text:       CellForeground
-    background: '#3e4451' # syntax-selection-color
+    background: "0x2c2e34"
+    foreground: "0xc5cdd9"
+
   normal:
-    black:      '#5c6370' # mono-3
-    red:        '#e06c75' # red 1
-    green:      '#98c379'
-    yellow:     '#e5c07b' # orange 2
-    blue:       '#61afef'
-    magenta:    '#c678dd'
-    cyan:       '#56b6c2'
-    white:      '#828997' # mono-2
+    black: "0x3e4249"
+    red: "0xec7279"
+    green: "0xa0c980"
+    yellow: "0xdeb974"
+    blue: "0x6cb6eb"
+    magenta: "0xd38aea"
+    cyan: "0x5dbbc1"
+    white: "0xc5cdd9"
+
+  bright:
+    black: "0x3e4249"
+    red: "0xec7279"
+    green: "0xa0c980"
+    yellow: "0xdeb974"
+    blue: "0x6cb6eb"
+    magenta: "0xd38aea"
+    cyan: "0x5dbbc1"
+    white: "0xc5cdd9"
