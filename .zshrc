@@ -12,7 +12,7 @@ alias cc='gcc-10'
 alias g++='g++-10'
 alias c++='c++-10'
 # Add pip3 alias
-alias pip='pip3'
+alias pip="pip3.9"
 #Use pure prompt
 autoload -U promptinit; 
 
@@ -34,16 +34,16 @@ zplug "plugins/yarn", from:oh-my-zsh
 zplug "plugins/nvm", from:oh-my-zsh
 zplug "plugins/git-flow", from:oh-my-zsh
 zplug "plugins/deno", from:oh-my-zsh
-#zplug "plugins/tmux", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/brew", from:oh-my-zsh
 
 if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -r -q; then
-        echo; zplug install
-    else
-        echo
-    fi
+  printf "Install? [y/N]: "
+  if read -r -q; then
+	echo; zplug install
+  else
+	echo
+  fi
 fi
 zplug load
 #Non essential
@@ -53,3 +53,5 @@ bindkey '^[' vi-cmd-mode
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+# Add path for getting Python packages
+export PATH="/Users/hugosum/Library/Python/3.9/bin:$PATH"
