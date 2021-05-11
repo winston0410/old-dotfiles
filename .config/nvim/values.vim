@@ -1,5 +1,7 @@
 set encoding=UTF-8
 set termguicolors
+" Add mouse support for scrolling correctly in tmux
+set mouse=a
 "Reduce time to wait for key combo
 set timeoutlen=400
 "Wrap code without breaking word boundary
@@ -15,8 +17,9 @@ set nowritebackup
 set cmdheight=2
 "Highlight matching parenthesis
 set showmatch
-"Add absolute line number"
+"Use relative number"
 set number
+set relativenumber
 "Set default direction for splitting panes"
 set splitbelow
 set splitright
@@ -33,9 +36,10 @@ set signcolumn=yes
 set lazyredraw
 "Minimum rows above and below cursor
 set scrolloff=5
+"Use smartcase for search
+set ignorecase smartcase
+"Ensure magic is on
+set magic
 "Use a login shell for using .bash_profile
 let &shell='/bin/zsh --login'
 "Set theme value"
-let g:lightline = {
-  \ 'colorscheme': 'edge',
-  \ }
