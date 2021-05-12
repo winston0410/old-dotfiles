@@ -1,11 +1,34 @@
+local root_dir = function() return vim.fn.getcwd() end
+
+local on_attach = function(client)
+  -- Show diagonistic messages
+  vim.cmd("command! LspNextDiagonistic lua vim.lsp.diagnostic.goto_next{ wrap = true }")
+  vim.cmd("command! LspOpenDiagonisticList lua vim.lsp.diagnostic.set_loclist()")
+  vim.cmd("command! LspShowTypeSignature lua vim.lsp.buf.type_definition()")
+  vim.cmd("command! LspHover lua vim.lsp.buf.hover()")
+  vim.cmd("command! LspToDefinition lua vim.lsp.buf.definition()")
+  vim.cmd("command! LspToTypeDefinition lua vim.lsp.buf.type_definition()")
+  vim.cmd("command! LspCodeAction lua vim.lsp.buf.code_action()")
+  vim.cmd("command! LspFormat lua vim.lsp.buf.formatting()")
+  vim.cmd("command! LspRenameSymbol lua vim.lsp.buf.rename()")
+end
+
 local function init(paq)
   paq{'neovim/nvim-lspconfig'}
   local lspconfig = require('lspconfig')
-  lspconfig.html.setup{}
-  lspconfig.cssls.setup{}
-  lspconfig.jsonls.setup{}
+  lspconfig.html.setup{
+	root_dir = root_dir
+  }
+  lspconfig.cssls.setup{
+	root_dir = root_dir
+  }
+  lspconfig.jsonls.setup{
+	root_dir = root_dir
+  }
   lspconfig.rust_analyzer.setup{}
-  lspconfig.svelte.setup{}
+  lspconfig.svelte.setup{
+	root_dir = root_dir
+  }
   lspconfig.vuels.setup{}
   lspconfig.sqls.setup{}
   lspconfig.graphql.setup{}
@@ -40,55 +63,61 @@ local function init(paq)
 	}
   }
 
-  lspconfig.tsserver.setup{
-	root_dir = function() return vim.fn.getcwd() end
-	--on_attach=require'completion'.on_attach,
-  }
-  lspconfig.dockerls.setup{}
-  lspconfig.purescriptls.setup{}
-  lspconfig.yamlls.setup{}
-  lspconfig.vimls.setup{}
-
-  local eslint = require('plugins.lsp-servers.eslint').config
-  local shellcheck = require('plugins.lsp-servers.shellcheck').config
-  local markdownlint = require('plugins.lsp-servers.markdownlint').config
-  local hadolint = require('plugins.lsp-servers.hadolint').config
-  local dotenv_linter = require('plugins.lsp-servers.dotenv_linter').config
-
-  lspconfig.efm.setup{
-	root_dir = function() return vim.fn.getcwd() end,
-	settings = {
-	  languages = {
-		javascript = { eslint },
-		javascriptreact = { eslint },
-		['javascript.jsx'] = { eslint },
-		typescript = { eslint },
-		typescriptreact = { eslint },
-		['typescript.jsx'] = { eslint },
-		dockerfile = { hadolint },
-		sh = { shellcheck },
-		zsh = { shellcheck },
-		markdown = { markdownlint },
-		dotenv = { dotenv_linter },
-	  },
-	},
-	filetypes = {
-	  "dotenv",
-	  "sh",
-	  "zsh",
-	  "dockerfile",
-	  "markdown",
-	  "javascript",
-	  "javascriptreact",
-	  "javascript.jsx",
-	  "typescript",
-	  "typescript.tsx",
-	  "typescriptreact"
+  --   lspconfig.tsserver.setup{
+	-- root_dir = root_dir
+	-- --on_attach=require'completion'.on_attach,
+	--   }
+	lspconfig.denols.setup{
+	  on_attach = on_attach,
+	  root_dir = root_dir
 	}
-  }
-  lspconfig.dhall_lsp_server.setup{}
-end
+	lspconfig.dockerls.setup{ root_dir = root_dir }
+	lspconfig.purescriptls.setup{}
+	lspconfig.yamlls.setup{}
+	lspconfig.vimls.setup{}
 
-return {
-  init = init
-}
+	local eslint = require('plugins.lsp-servers.eslint').config
+	local shellcheck = require('plugins.lsp-servers.shellcheck').config
+	local markdownlint = require('plugins.lsp-servers.markdownlint').config
+	local hadolint = require('plugins.lsp-servers.hadolint').config
+	local dotenv_linter = require('plugins.lsp-servers.dotenv_linter').config
+	local htmlhint = require('plugins.lsp-servers.htmlhint').config
+
+	lspconfig.efm.setup{
+	  on_attach = on_attach,
+	  root_dir = root_dir,
+	  settings = {
+		languages = {
+		  javascript = { eslint },
+		  html = { htmlhint },
+		  javascriptreact = { eslint },
+		  ['javascript.jsx'] = { eslint },
+		  typescript = { eslint },
+		  typescriptreact = { eslint },
+		  ['typescript.jsx'] = { eslint },
+		  dockerfile = { hadolint },
+		  sh = { shellcheck },
+		  zsh = { shellcheck },
+		  markdown = { markdownlint },
+		  dotenv = { dotenv_linter },
+		},
+	  },
+	  filetypes = {
+		"dotenv",
+		"sh",
+		"zsh",
+		"dockerfile",
+		"markdown",
+		"javascript",
+		"javascriptreact",
+		"javascript.jsx",
+		"typescript",
+		"typescript.tsx",
+		"typescriptreact"
+	  }
+	}
+  end
+
+  return {
+	init = init
+  }
