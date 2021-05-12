@@ -10,7 +10,6 @@ tmux
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
-zplug
 efm-langserver
 luarocks
 shellcheck
@@ -23,6 +22,8 @@ exa
 python
 shfmt
 bat
+fd
+ripgrep
 END
 )
 
@@ -42,4 +43,4 @@ brew install --cask $CASKS
 brew install $FORMULAS
 brew postinstall $POST_INSTALL
 # Enable fzf keybinding, run it once only
-$(brew --prefix)/opt/fzf/install
+# $(brew --prefix)/opt/fzf/install
