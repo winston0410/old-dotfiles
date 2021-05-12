@@ -22,6 +22,7 @@ fzf
 exa
 python
 shfmt
+bat
 END
 )
 
