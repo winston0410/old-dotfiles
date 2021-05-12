@@ -21,6 +21,7 @@ hadolint
 fzf
 exa
 python
+shfmt
 END
 )
 
@@ -31,5 +32,13 @@ font-hack-nerd-font
 END
 )
 
+POST_INSTALL=$(cat <<-END
+node
+END
+)
+
 brew install --cask $CASKS
 brew install $FORMULAS
+brew postinstall $POST_INSTALL
+# Enable fzf keybinding, run it once only
+$(brew --prefix)/opt/fzf/install
