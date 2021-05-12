@@ -24,6 +24,7 @@ shfmt
 bat
 fd
 ripgrep
+deno
 END
 )
 
