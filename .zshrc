@@ -1,5 +1,3 @@
-export ZPLUG_HOME=$(brew --prefix)/opt/zplug
-source $ZPLUG_HOME/init.zsh
 # Alias
 alias ls="exa --icons"
 alias vi="nvim"
@@ -13,45 +11,59 @@ alias g++='g++-10'
 alias c++='c++-10'
 # Add pip3 alias
 alias pip="pip3.9"
-#Use pure prompt
-autoload -U promptinit; 
 
-promptinit
-prompt pure
-autoload -U compinit; 
-compinit -y
-# Plugins
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-zplug "agkozak/zsh-z"
-#zplug "jeffreytse/zsh-vi-mode"
-zplug "plugins/gitfast",   from:oh-my-zsh
-zplug "plugins/docker", from:oh-my-zsh
-zplug "plugins/docker-compose", from:oh-my-zsh
-zplug "plugins/docker-compose", from:oh-my-zsh
-zplug "plugins/npm", from:oh-my-zsh
-zplug "plugins/yarn", from:oh-my-zsh
-zplug "plugins/nvm", from:oh-my-zsh
-zplug "plugins/git-flow", from:oh-my-zsh
-zplug "plugins/deno", from:oh-my-zsh
-zplug "plugins/tmux", from:oh-my-zsh
-zplug "plugins/brew", from:oh-my-zsh
-
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -r -q; then
-	echo; zplug install
-  else
-	echo
-  fi
-fi
-zplug load
 #Non essential
 # Keybindings
 # Enter vi mode
-bindkey '^[' vi-cmd-mode
+# bindkey '^[' vi-cmd-mode
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 # Add path for getting Python packages
 export PATH="/Users/hugosum/Library/Python/3.9/bin:$PATH"
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-rust \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-bin-gem-node
+
+### End of Zinit's installer chunk
+
+zinit wait lucid light-mode for \
+	atinit"zicompinit; zicdreplay" \
+	compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh' \
+	sindresorhus/pure \
+	agkozak/zsh-z \
+	zdharma/fast-syntax-highlighting \
+	 as"completion" \
+        OMZP::docker/_docker \
+		OMZP::node \
+		OMZP::npm \
+		OMZP::yarn \
+		OMZP::brew \
+		OMZP::deno \
+		OMZP::docker-compose \
+		OMZP::tmux \
+		OMZP::gitfast \
+		OMZP::pip \
+		# OMZP::rust/_rust \
+		OMZP::rustup/_rustup \
+	atload"_zsh_autosuggest_start" \
+	zsh-users/zsh-autosuggestions \
+
