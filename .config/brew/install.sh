@@ -25,6 +25,7 @@ bat
 fd
 ripgrep
 deno
+rust
 END
 )
 
