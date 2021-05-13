@@ -10,22 +10,17 @@ paq{'savq/paq-nvim', opt=true}     -- Let Paq manage itself
 
 paq{'wbthomason/packer.nvim'}
 require('plugins.lspconfig').init(paq)
---require('plugins.lspsaga').init(paq)
+paq{'kyazdani42/nvim-web-devicons'}
 require('plugins.completion').init(paq)
 require('plugins.treesitter').init(paq)
 require('plugins.edge').init(paq)
-paq{'kyazdani42/nvim-web-devicons'}
 require('plugins.nerd-commenter').init(paq)
 require('plugins.easy-motion').init(paq)
-require('plugins.nvim-tree').init(paq)
 require('plugins.gitsigns').init(paq)
---require('plugins.toggleterm').init(paq)
 require('plugins.indent-blankline').init(paq)
 require('plugins.telescope-nvim').init(paq)
 require('plugins.galaxyline').init(paq)
-require('plugins.autopairs').init(paq)
 require('plugins.formatter').init(paq)
-
 
 vim.cmd [[
 if !exists('g:syntax_on')
