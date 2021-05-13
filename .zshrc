@@ -15,6 +15,8 @@ alias pip="pip3.9"
 # Use faster alternatives
 alias find="fd"
 alias grep="rg"
+# fzf with preview
+alias pfzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 #Non essential
 # Keybindings
 # Enter vi mode
@@ -77,3 +79,4 @@ zinit wait lucid light-mode for \
 	--color=fg+:#c5cdd9,bg+:#262729,hl+:#5dbbc1 
 	--color=info:#88909f,prompt:#ec7279,pointer:#d38aea 
 	--color=marker:#a0c980,spinner:#ec7279,header:#5dbbc1'
+	export FZF_COMPLETION_OPTS="--height 100% --preview 'bat --style=numbers --color=always --line-range :500 {}'"
