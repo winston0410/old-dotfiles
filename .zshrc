@@ -65,8 +65,8 @@ zinit wait lucid light-mode for \
 		OMZP::tmux \
 		OMZP::gitfast \
 		OMZP::pip \
-		# OMZP::rust/_rust \
-		OMZP::rustup/_rustup \
+		OMZP::golang \
+		# OMZP::rustup/_rustup \
 	atload"_zsh_autosuggest_start" \
 	zsh-users/zsh-autosuggestions \
 
