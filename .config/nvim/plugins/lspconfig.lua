@@ -91,6 +91,7 @@ local function init(paq)
 	local hadolint = require('plugins.lsp-servers.hadolint').config
 	local dotenv_linter = require('plugins.lsp-servers.dotenv_linter').config
 	local htmlhint = require('plugins.lsp-servers.htmlhint').config
+	local yamllint = require('plugins.lsp-servers.yamllint').config
 
 	lspconfig.efm.setup{
 	  on_attach = on_attach,
@@ -109,10 +110,12 @@ local function init(paq)
 		  zsh = { shellcheck },
 		  markdown = { markdownlint },
 		  dotenv = { dotenv_linter },
+		  yaml = { yamllint },
 		},
 	  },
 	  filetypes = {
 		"dotenv",
+		"yaml",
 		"sh",
 		"zsh",
 		"dockerfile",
