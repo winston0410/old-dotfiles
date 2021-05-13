@@ -27,6 +27,7 @@ ripgrep
 deno
 rust
 ninja
+go
 END
 )
 
