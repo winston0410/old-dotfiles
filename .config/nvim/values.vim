@@ -1,7 +1,7 @@
 set encoding=UTF-8
 set termguicolors
 " Add mouse support for scrolling correctly in tmux
-set mouse=a
+set mouse=nvi
 "Reduce time to wait for key combo
 set timeoutlen=400
 "Wrap code without breaking word boundary
@@ -25,7 +25,7 @@ set splitbelow
 set splitright
 "Make yanked content accessible in clipboard"
 "set clipboard=unnamed
-set shiftwidth=2
+set shiftwidth=4
 set autoindent
 "set cindent
 filetype plugin indent on
@@ -43,3 +43,7 @@ set magic
 "Use a login shell for using .bash_profile
 let &shell='/bin/zsh --login'
 "Set theme value"
+set wildmenu
+set wildmode=longest:full,full
+" Show hidden symbol
+" set list
