@@ -17,19 +17,28 @@ local function init(paq)
   paq{'neovim/nvim-lspconfig'}
   local lspconfig = require('lspconfig')
   lspconfig.html.setup{
-	root_dir = root_dir
+	root_dir = root_dir,
+	on_attach = on_attach
   }
   lspconfig.cssls.setup{
-	root_dir = root_dir
+	root_dir = root_dir,
+	on_attach = on_attach
   }
   lspconfig.jsonls.setup{
-	root_dir = root_dir
+	root_dir = root_dir,
+	on_attach = on_attach
   }
-  lspconfig.rust_analyzer.setup{}
+  lspconfig.rust_analyzer.setup{
+	  root_dir = root_dir,
+	  on_attach = on_attach
+  }
   lspconfig.svelte.setup{
 	root_dir = root_dir
   }
-  lspconfig.vuels.setup{}
+  lspconfig.vuels.setup{
+	  root_dir = root_dir,
+	  on_attach = on_attach
+  }
   lspconfig.sqls.setup{}
   lspconfig.graphql.setup{}
   lspconfig.angularls.setup{}
@@ -71,10 +80,10 @@ local function init(paq)
 	  on_attach = on_attach,
 	  root_dir = root_dir
 	}
-	lspconfig.dockerls.setup{ root_dir = root_dir }
-	lspconfig.purescriptls.setup{}
-	lspconfig.yamlls.setup{}
-	lspconfig.vimls.setup{}
+	lspconfig.dockerls.setup{ on_attach = on_attach, root_dir = root_dir }
+	lspconfig.purescriptls.setup{ on_attach = on_attach, root_dir = root_dir }
+	lspconfig.yamlls.setup{ on_attach = on_attach, root_dir = root_dir }
+	lspconfig.vimls.setup{ on_attach = on_attach, root_dir = root_dir }
 
 	local eslint = require('plugins.lsp-servers.eslint').config
 	local shellcheck = require('plugins.lsp-servers.shellcheck').config
