@@ -26,6 +26,7 @@ fd
 ripgrep
 deno
 rust
+ninja
 END
 )
 
