@@ -92,6 +92,7 @@ local function init(paq)
 	local dotenv_linter = require('plugins.lsp-servers.dotenv_linter').config
 	local htmlhint = require('plugins.lsp-servers.htmlhint').config
 	local yamllint = require('plugins.lsp-servers.yamllint').config
+	local fixjson = require('plugins.lsp-servers.fixjson').config
 
 	lspconfig.efm.setup{
 	  on_attach = on_attach,
@@ -111,10 +112,12 @@ local function init(paq)
 		  markdown = { markdownlint },
 		  dotenv = { dotenv_linter },
 		  yaml = { yamllint },
+		  json = { fixjson },
 		},
 	  },
 	  filetypes = {
 		"dotenv",
+		"json",
 		"yaml",
 		"sh",
 		"zsh",
