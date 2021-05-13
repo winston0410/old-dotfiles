@@ -12,6 +12,9 @@ alias c++='c++-10'
 # Add pip3 alias
 alias pip="pip3.9"
 
+# Use faster alternatives
+alias find="fd"
+alias grep="rg"
 #Non essential
 # Keybindings
 # Enter vi mode
@@ -67,3 +70,11 @@ zinit wait lucid light-mode for \
 	atload"_zsh_autosuggest_start" \
 	zsh-users/zsh-autosuggestions \
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+		export FZF_DEFAULT_COMMAND='fd --type file'
+		export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+		export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
+		--color=fg:#c5cdd9,bg:#262729,hl:#6cb6eb 
+		--color=fg+:#c5cdd9,bg+:#262729,hl+:#5dbbc1 
+		--color=info:#88909f,prompt:#ec7279,pointer:#d38aea 
+		--color=marker:#a0c980,spinner:#ec7279,header:#5dbbc1'
