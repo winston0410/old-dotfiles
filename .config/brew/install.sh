@@ -25,7 +25,7 @@ bat
 fd
 ripgrep
 deno
-rust
+rustup
 ninja
 go
 END
