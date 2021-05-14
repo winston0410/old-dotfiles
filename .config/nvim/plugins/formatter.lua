@@ -7,6 +7,15 @@ local function prettier()
     }
 end
 
+local function rustfmt()
+    return {
+        exe = "rustfmt",
+        -- Can rustfmt pick up config automatically?
+        args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
+        stdin = true
+    }
+end
+
 local function luafmt()
     return {
         exe = "lua-format",
@@ -53,7 +62,8 @@ local function init(paq)
             make = {
                 -- prettier
             },
-            lua = {luafmt}
+            lua = {luafmt},
+            rust = {rustfmt}
         }
     })
     vim.cmd [[ nnoremap <silent> <C-F> :Format<CR>  ]]
