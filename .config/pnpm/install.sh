@@ -14,6 +14,7 @@ typescript typescript-language-server
 vim-language-server
 yaml-language-server
 vls
+pyright
 END
 )
 
