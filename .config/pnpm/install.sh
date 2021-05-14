@@ -12,6 +12,7 @@ purescript-language-server
 svelte-language-server
 typescript typescript-language-server
 vim-language-server
+yaml-language-server
 vls
 END
 )
