@@ -13,6 +13,7 @@ require('plugins.lspconfig').init(paq)
 require('plugins.smart_number').setup(paq)
 paq{'kyazdani42/nvim-web-devicons'}
 require('plugins.completion').init(paq)
+require('plugins.trouble').init(paq)
 require('plugins.treesitter').init(paq)
 require('plugins.edge').init(paq)
 require('plugins.nerd-commenter').init(paq)
