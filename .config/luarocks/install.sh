@@ -1,4 +1,5 @@
 PACKAGES=$(cat <<- END
+penlight
 luaformatter
 END
 )
