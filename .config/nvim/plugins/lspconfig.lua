@@ -42,7 +42,7 @@ local function init(paq)
 	lspconfig.sqls.setup{}
 	lspconfig.graphql.setup{}
 	lspconfig.angularls.setup{}
-	--lspconfig.bashls.setup{}
+	lspconfig.bashls.setup{}
 	local sumneko_root_path = os.getenv("HOME") ..
 	"/.config/standalone/lua-language-server"
 	local sumneko_binary = sumneko_root_path .. "/bin/macOS/lua-language-server"
@@ -93,6 +93,7 @@ local function init(paq)
 		local htmlhint = require('plugins.lsp-servers.htmlhint').config
 		local yamllint = require('plugins.lsp-servers.yamllint').config
 		local fixjson = require('plugins.lsp-servers.fixjson').config
+		local flake8 = require('plugins.lsp-servers.flake8').config
 
 		lspconfig.efm.setup{
 			on_attach = on_attach,
@@ -113,6 +114,7 @@ local function init(paq)
 					dotenv = { dotenv_linter },
 					yaml = { yamllint },
 					json = { fixjson },
+					python = { flake8 },
 				},
 			},
 			filetypes = {
@@ -128,7 +130,8 @@ local function init(paq)
 				"javascript.jsx",
 				"typescript",
 				"typescript.tsx",
-				"typescriptreact"
+				"typescriptreact",
+				"python"
 			}
 		}
 

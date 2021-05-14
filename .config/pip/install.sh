@@ -1,6 +1,7 @@
 PACKAGES=$(cat <<-END
 tmuxp
 yamllint
+flake8
 END
 )
 
