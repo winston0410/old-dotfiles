@@ -39,10 +39,10 @@ local function init(paq)
 		root_dir = root_dir,
 		on_attach = on_attach
 	}
-	lspconfig.sqls.setup{}
-	lspconfig.graphql.setup{}
-	lspconfig.angularls.setup{}
-	lspconfig.bashls.setup{}
+	lspconfig.sqls.setup{ on_attach = on_attach, root_dir = root_dir }
+	lspconfig.graphql.setup{ on_attach = on_attach, root_dir = root_dir }
+	lspconfig.angularls.setup{ on_attach = on_attach, root_dir = root_dir }
+	lspconfig.bashls.setup{ on_attach = on_attach, root_dir = root_dir }
 	local sumneko_root_path = os.getenv("HOME") ..
 	"/.config/standalone/lua-language-server"
 	local sumneko_binary = sumneko_root_path .. "/bin/macOS/lua-language-server"
