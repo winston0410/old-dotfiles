@@ -1,8 +1,15 @@
 local function prettier()
     return {
         exe = "prettier",
-        -- Can prettier pick up config automatically?
         args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
+        stdin = true
+    }
+end
+
+local function dockfmt()
+    return {
+        exe = "dockfmt",
+        args = {"--write", "--", vim.api.nvim_buf_get_name(0)},
         stdin = true
     }
 end
@@ -10,7 +17,6 @@ end
 local function rustfmt()
     return {
         exe = "rustfmt",
-        -- Can rustfmt pick up config automatically?
         args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
         stdin = true
     }
@@ -27,14 +33,14 @@ end
 local function shfmt()
     return {
         exe = "shfmt",
-        args = {"-w", vim.api.nvim_buf_get_name(0)},
+        -- args = {"-w", "--", vim.api.nvim_buf_get_name(0)},
+        args = {"-s", "-w", "--", vim.api.nvim_buf_get_name(0)},
         stdin = true
     }
 end
 
 local function init(paq)
     paq {'mhartington/formatter.nvim'}
-    -- print( vim.api.nvim_buf_get_name(0)) 
     require('formatter').setup({
         logging = false,
         filetype = {
@@ -56,9 +62,7 @@ local function init(paq)
             toml = {prettier},
             vue = {prettier},
             svelte = {prettier},
-            dockerfile = {
-                -- prettier
-            },
+            dockerfile = {dockfmt},
             make = {
                 -- prettier
             },
