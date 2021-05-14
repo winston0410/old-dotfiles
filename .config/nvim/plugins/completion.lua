@@ -2,6 +2,7 @@ local function init(paq)
   vim.o.completeopt = "menuone,noselect"
 
   paq{'hrsh7th/vim-vsnip'}
+  paq{"rafamadriz/friendly-snippets"}
   paq{'hrsh7th/nvim-compe'}
 
   require'compe'.setup {
