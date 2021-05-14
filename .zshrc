@@ -5,10 +5,10 @@ alias vim="nvim"
 alias vimdiff="nvim -d"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # Use gcc10 instead of AppleClang
-alias gcc='gcc-10'
-alias cc='gcc-10'
-alias g++='g++-10'
-alias c++='c++-10'
+alias gcc='gcc-11'
+alias cc='gcc-11'
+alias g++='g++-11'
+alias c++='c++-11'
 # Add pip3 alias
 alias pip="pip3.9"
 
@@ -29,6 +29,10 @@ export PATH="/Users/hugosum/Library/Python/3.9/bin:$PATH"
 # Add path for getting go binary
 export PATH="/usr/local/go/bin:$PATH"
 export GOPATH=$HOME/go
+export TMUXP_CONFIGDIR=$HOME/.tmuxp
+# Change cmake compiler
+export CC=$(which gcc-11)
+export CXX=$(which g++-11)
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -83,3 +87,5 @@ zinit wait lucid light-mode for \
 	--color=info:#88909f,prompt:#ec7279,pointer:#d38aea 
 	--color=marker:#a0c980,spinner:#ec7279,header:#5dbbc1'
 	export FZF_COMPLETION_OPTS="--height 100% --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+
+alias luamake=/Users/hugosum/.config/standalone/lua-language-server/3rd/luamake/luamake
