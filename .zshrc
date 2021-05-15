@@ -11,8 +11,6 @@ alias g++='g++-11'
 alias c++='c++-11'
 # Add pip3 alias
 alias pip="pip3.9"
-# Add rustup alias
-alias rustup="rustup-init"
 # Use faster alternatives
 alias find="fd"
 alias grep="rg"
