@@ -1,3 +1,7 @@
+" Change search highlight
+highlight! link Search Visual
+" Change incsearch highlight
+highlight! link IncSearch Visual
 "Override theme highlight
 highlight! link VirtualTextHint Blue 
 highlight! link HintText Blue 
