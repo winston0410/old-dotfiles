@@ -1,6 +1,13 @@
 PACKAGES=$(cat <<- END
 rustfmt
+rust-src
 END
 )
 
-rustup component add "$PACKAGES"
+NIGHTLY=$(cat <<- END
+rust-analyzer-preview
+END
+)
+
+rustup component add $PACKAGES
+rustup +nightly component add $NIGHTLY
