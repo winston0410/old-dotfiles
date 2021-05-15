@@ -24,9 +24,10 @@ alias pfzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 # Add path for getting Python packages
-export PATH="/Users/hugosum/Library/Python/3.9/bin:$PATH"
+BINARY_DIR="/usr/local"
+export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 # Add path for getting go binary
-export PATH="/usr/local/go/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 export GOPATH=$HOME/go
 export TMUXP_CONFIGDIR=$HOME/.tmuxp
 # Change cmake compiler
