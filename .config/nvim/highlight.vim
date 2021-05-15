@@ -7,5 +7,6 @@ highlight! link GitSignsChange Yellow
 highlight! link GitSignsDelete Red
 "LspInfomation
 highlight! link LspDiagnosticsSignHint BlueSign
-
+" Gitsigns
+highlight! link GitSignsCurrentLineBlame TSComment
 
