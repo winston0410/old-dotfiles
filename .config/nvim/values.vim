@@ -4,6 +4,7 @@ set termguicolors
 set mouse=nvi
 "Reduce time to wait for key combo
 set timeoutlen=400
+set updatetime=500
 "Wrap code without breaking word boundary
 set wrap
 set textwidth=72
@@ -14,7 +15,7 @@ set cursorline
 set nobackup
 set nowritebackup
 "Increase the height of command
-set cmdheight=2
+set cmdheight=1
 "Highlight matching parenthesis
 set showmatch
 "Use relative number"
