@@ -9,3 +9,6 @@
 	path = nvim -d
 [merge]
 	tool = vimdiff
+	ff = no
+[pull]
+	ff = yes
