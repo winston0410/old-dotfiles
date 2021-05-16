@@ -1,7 +1,7 @@
 set encoding=UTF-8
 set termguicolors
 " Add mouse support for scrolling correctly in tmux
-set mouse=nvi
+set mouse=nvic
 "Reduce time to wait for key combo
 set timeoutlen=400
 set updatetime=500
