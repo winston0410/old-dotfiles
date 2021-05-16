@@ -7,7 +7,6 @@ set timeoutlen=400
 set updatetime=500
 "Wrap code without breaking word boundary
 set wrap
-set textwidth=72
 set linebreak
 "Highlight current line
 set cursorline
