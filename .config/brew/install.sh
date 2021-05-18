@@ -35,6 +35,7 @@ CASKS=$(cat<<-END
 alacritty
 insomnia
 font-hack-nerd-font	
+devdocs
 END
 )
 
