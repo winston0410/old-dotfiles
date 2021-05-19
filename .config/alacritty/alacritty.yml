@@ -19,12 +19,12 @@ font:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: true
-mouse:
-  url:
-    launcher:
-      # This depends on your OS, on Mac it’s `open`
-      program: open
-    modifiers: Command
+# mouse:
+#   url:
+#     launcher:
+#       # This depends on your OS, on Mac it’s `open`
+#       program: open
+#     modifiers: Command
 colors:
   ### Edge (Dark Default variant)
   primary:
