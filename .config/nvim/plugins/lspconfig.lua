@@ -22,6 +22,7 @@ local function init(paq)
     lspconfig.cssls.setup {root_dir = root_dir, on_attach = on_attach}
     lspconfig.jsonls.setup {root_dir = root_dir, on_attach = on_attach}
     lspconfig.rust_analyzer.setup {root_dir = root_dir, on_attach = on_attach}
+	lspconfig.dartls.setup {root_dir = root_dir, on_attach = on_attach}
     lspconfig.svelte.setup {root_dir = root_dir}
     lspconfig.vuels.setup {root_dir = root_dir, on_attach = on_attach}
     lspconfig.sqls.setup {on_attach = on_attach, root_dir = root_dir}
