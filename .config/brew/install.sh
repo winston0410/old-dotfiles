@@ -1,3 +1,8 @@
+TAPS=$(cat<<-END
+dart-lang/dart
+END
+)
+
 FORMULAS=$(cat<<-END
 git
 mongodb/brew/mongodb-community
@@ -28,6 +33,7 @@ deno
 rustup
 ninja
 go
+dart
 END
 )
 
@@ -44,6 +50,7 @@ node
 END
 )
 
+brew tap $TAPS
 brew install --cask $CASKS
 brew install $FORMULAS
 brew postinstall $POST_INSTALL
