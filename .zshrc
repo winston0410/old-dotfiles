@@ -16,6 +16,8 @@ alias find="fd"
 alias grep="rg"
 # fzf with preview
 alias pfzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+# Load tmuxp config
+alias start="sh ./.tmuxp/start.sh"
 #Non essential
 # Keybindings
 # Enter vi mode
