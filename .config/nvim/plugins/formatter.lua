@@ -70,7 +70,7 @@ local function init(paq)
             rust = {rustfmt}
         }
     })
-    vim.cmd [[ nnoremap <silent> <C-F> :Format<CR>  ]]
+    vim.cmd [[ nnoremap <silent> <C-F> :write <bar> :Format<CR>  ]]
     -- vim.api.nvim_exec([[
     -- augroup FormatAutogroup
     -- autocmd!
