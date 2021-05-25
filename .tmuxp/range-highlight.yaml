@@ -1,0 +1,13 @@
+---
+session_name: "range-highlight.nvim development"
+windows:
+  - window_name: "init.lua"
+    layout: tiled
+    shell_command_before:
+      - cd ~/.local/share/nvim/site/pack/paqs/start/cmd-parser.nvim/lua/cmd-parser
+      - vim init.lua
+  - window_name: "helper.lua"
+    layout: tiled
+    shell_command_before:
+      - cd ~/.local/share/nvim/site/pack/paqs/start/cmd-parser.nvim/lua/cmd-parser
+      - vim init.test.lua
