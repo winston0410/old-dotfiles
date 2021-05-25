@@ -10,5 +10,6 @@
 luarocks install --server=https://luarocks.org/dev luaformatter
 luarocks install --server=https://luarocks.org/dev luapak
 luarocks install --server=https://luarocks.org/dev luafilesystem
-
+luarocks install tl
+luarocks install --dev teal-language-server
 
