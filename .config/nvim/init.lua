@@ -29,6 +29,8 @@ require('plugins.formatter').init(paq)
 require('plugins.colorizer').init(paq)
 -- require('plugins.numb').init(paq)
 require('plugins.range-highlight').init(paq)
+require('better-O').setup()
+require('custom-filetypes')
 
 vim.cmd [[
 if !exists('g:syntax_on')
