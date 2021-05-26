@@ -5,8 +5,8 @@ local function init(paq)
 		width = 30,
 		use_lsp_diagnostic_signs = true,
 		indent_lines = false,
-		auto_open = true,
-		auto_close = true
+		-- auto_open = true,
+		-- auto_close = true
 	}
 	vim.api.nvim_set_keymap("n", "<C-l>",
 	"<cmd>Trouble lsp_document_diagnostics<cr>",
