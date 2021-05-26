@@ -29,7 +29,7 @@ require('plugins.formatter').init(paq)
 require('plugins.colorizer').init(paq)
 -- require('plugins.numb').init(paq)
 require('plugins.range-highlight').init(paq)
-require('better-O').setup()
+require('plugins.better-O').init(paq)
 require('custom-filetypes')
 
 vim.cmd [[
