@@ -30,12 +30,7 @@ require('plugins.colorizer').init(paq)
 -- require('plugins.numb').init(paq)
 require('plugins.range-highlight').init(paq)
 require('plugins.better-O').init(paq)
+require('plugins.motion-hints').init(paq)
 require('custom-filetypes')
 
-vim.cmd [[
-if !exists('g:syntax_on')
-	syntax enable
-	endif
-	colorscheme edge
-	]]
 vim.cmd [[ source $HOME/.config/nvim/highlight.vim ]]
