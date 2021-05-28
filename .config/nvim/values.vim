@@ -5,6 +5,8 @@ set mouse=nvic
 "Reduce time to wait for key combo
 set timeoutlen=400
 set updatetime=500
+" Hide mode message
+set noshowmode
 "Wrap code without breaking word boundary
 set wrap
 set linebreak
