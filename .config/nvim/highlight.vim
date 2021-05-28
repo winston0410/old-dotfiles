@@ -13,4 +13,6 @@ highlight! link GitSignsDelete Red
 highlight! link LspDiagnosticsSignHint BlueSign
 " Gitsigns
 highlight! link GitSignsCurrentLineBlame TSComment
-
+" relativenumber current line highlight
+" Use cleared to make it white
+highlight! link CursorLineNr cleared
