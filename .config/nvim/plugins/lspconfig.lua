@@ -22,7 +22,7 @@ local function init(paq)
     lspconfig.cssls.setup {root_dir = root_dir, on_attach = on_attach}
     lspconfig.jsonls.setup {root_dir = root_dir, on_attach = on_attach}
     lspconfig.rust_analyzer.setup {root_dir = root_dir, on_attach = on_attach}
-	lspconfig.dartls.setup {root_dir = root_dir, on_attach = on_attach}
+    lspconfig.dartls.setup {root_dir = root_dir, on_attach = on_attach}
     lspconfig.svelte.setup {root_dir = root_dir}
     lspconfig.vuels.setup {root_dir = root_dir, on_attach = on_attach}
     lspconfig.sqls.setup {on_attach = on_attach, root_dir = root_dir}
@@ -61,11 +61,8 @@ local function init(paq)
         },
         on_attach = on_attach
     })
-    --   lspconfig.tsserver.setup{
-    -- root_dir = root_dir
-    -- --on_attach=require'completion'.on_attach,
-    --   }
-    lspconfig.denols.setup {on_attach = on_attach, root_dir = root_dir}
+    lspconfig.tsserver.setup {root_dir = root_dir, on_attach = on_attach}
+    -- lspconfig.denols.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.dockerls.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.purescriptls.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.yamlls.setup {on_attach = on_attach, root_dir = root_dir}
