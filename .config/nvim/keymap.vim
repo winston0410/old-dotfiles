@@ -33,8 +33,6 @@ nnoremap S <NOP>
 nnoremap s <NOP>
 "Remain in normal mode with o and O
 nnoremap o o<Esc>
-"Change after open to indent cursor position
-nnoremap oi o<Esc>cc
 " Break a line in normal mode
 nnoremap <C-J> i<CR><ESC>
 "Redo with r
