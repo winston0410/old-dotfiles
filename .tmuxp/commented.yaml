@@ -1,0 +1,13 @@
+---
+session_name: "commented development"
+windows:
+  - window_name: "init.lua"
+    layout: tiled
+    shell_command_before:
+      - cd ~/.local/share/nvim/site/pack/paqs/start/commented.nvim/lua/commented
+      - vim init.lua
+  - window_name: "git log"
+    layout: tiled
+    shell_command_before:
+      - cd ~/.local/share/nvim/site/pack/paqs/start/commented.nvim/lua/commented
+      - git log --oneline --graph
