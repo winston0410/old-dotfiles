@@ -17,6 +17,7 @@ end
 
 local function init(paq)
     paq {'neovim/nvim-lspconfig'}
+    -- paq {'folke/lua-dev.nvim'}
     local lspconfig = require('lspconfig')
     lspconfig.html.setup {root_dir = root_dir, on_attach = on_attach}
     lspconfig.cssls.setup {root_dir = root_dir, on_attach = on_attach}
@@ -82,6 +83,7 @@ local function init(paq)
     local yamllint = require('plugins.lsp-servers.yamllint').config
     local fixjson = require('plugins.lsp-servers.fixjson').config
     local flake8 = require('plugins.lsp-servers.flake8').config
+	local golint = require('plugins.lsp-servers.golint').config
 
     lspconfig.efm.setup {
         on_attach = on_attach,
@@ -102,6 +104,7 @@ local function init(paq)
                 dotenv = {dotenv_linter},
                 yaml = {yamllint},
                 json = {fixjson},
+				go = {golint},
                 python = {flake8}
             }
         },
