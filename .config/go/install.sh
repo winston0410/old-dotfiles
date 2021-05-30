@@ -1,6 +1,7 @@
 PACKAGES=$(
 	cat <<-END
 		golang.org/x/tools/gopls@latest
+		golang.org/x/lint/golint
 	END
 )
 
