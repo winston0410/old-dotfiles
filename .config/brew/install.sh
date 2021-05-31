@@ -11,7 +11,6 @@ neovim
 nmap
 node
 postgresql
-tmux
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
@@ -22,18 +21,11 @@ dotenv-linter
 gcc
 llvm
 hadolint
-fzf
 exa
 python
 shfmt
-bat
-fd
-ripgrep
 deno
 rustup
-ninja
-go
-dart
 END
 )
 
