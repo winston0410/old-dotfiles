@@ -1,12 +1,19 @@
+---
 shell:
-  program: /usr/local/bin/tmux
+  program: /run/current-system/sw/bin/tmux
   args:
     - new-session
     - -A
     - -D
     - -s
     - main
+
+# shell:
+#   program: /usr/local/bin/zsh
+#   args:
+#     - --login
 env:
+  # TERM: xterm-256color
   TERM: xterm-256color
   LC_ALL: en_US.UTF-8
 window:
@@ -51,12 +58,12 @@ schemes:
         cyan: "0x5dbbc1"
         white: "0xc5cdd9"
   # Default colors
-  tokyonight: &tokyonight
+  tokyonight_night: &tokyonight_night # Default colors
     primary:
       background: "0x1a1b26"
       foreground: "0xc0caf5"
 
-      # Normal colors
+    # Normal colors
     normal:
       black: "0x15161E"
       red: "0xf7768e"
@@ -67,7 +74,37 @@ schemes:
       cyan: "0x7dcfff"
       white: "0xa9b1d6"
 
-      # Bright colors
+    # Bright colors
+    bright:
+      black: "0x414868"
+      red: "0xf7768e"
+      green: "0x9ece6a"
+      yellow: "0xe0af68"
+      blue: "0x7aa2f7"
+      magenta: "0xbb9af7"
+      cyan: "0x7dcfff"
+      white: "0xc0caf5"
+
+    indexed_colors:
+      - { index: 16, color: "0xff9e64" }
+      - { index: 17, color: "0xdb4b4b" }
+  tokyonight_storm: &tokyonight_storm
+    primary:
+      background: "0x24283b"
+      foreground: "0xc0caf5"
+
+    # Normal colors
+    normal:
+      black: "0x1D202F"
+      red: "0xf7768e"
+      green: "0x9ece6a"
+      yellow: "0xe0af68"
+      blue: "0x7aa2f7"
+      magenta: "0xbb9af7"
+      cyan: "0x7dcfff"
+      white: "0xa9b1d6"
+
+    # Bright colors
     bright:
       black: "0x414868"
       red: "0xf7768e"
@@ -82,4 +119,5 @@ schemes:
       - { index: 16, color: "0xff9e64" }
       - { index: 17, color: "0xdb4b4b" }
 # colors: *edge_dark_def
-colors: *tokyonight
+colors: *tokyonight_night
+# colors: *tokyonight_storm
