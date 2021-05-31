@@ -68,6 +68,7 @@ local function init(paq)
     lspconfig.purescriptls.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.yamlls.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.vimls.setup {on_attach = on_attach, root_dir = root_dir}
+	lspconfig.rnix.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.pyright.setup {
         on_attach = on_attach,
         root_dir = root_dir,
