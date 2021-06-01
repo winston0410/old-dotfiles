@@ -1,0 +1,11 @@
+---
+session_name: "Tecky exercise"
+windows:
+  - window_name: "General terminal"
+    layout: tiled
+    shell_command_before:
+      - cd ~/Desktop/tecky-exercises-solutions-tw
+  - window_name: "React terminal"
+    layout: tiled
+    shell_command_before:
+      - cd ~/Desktop/tecky-exercises-solutions-tw

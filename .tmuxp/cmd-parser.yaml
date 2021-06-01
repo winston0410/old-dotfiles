@@ -10,4 +10,9 @@ windows:
     layout: tiled
     shell_command_before:
       - cd ~/.local/share/nvim/site/pack/paqs/start/cmd-parser.nvim/lua/cmd-parser
+      - vim init.test.lua
+  - window_name: "Test result"
+    layout: tiled
+    shell_command_before:
+      - cd ~/.local/share/nvim/site/pack/paqs/start/cmd-parser.nvim/lua/cmd-parser
       - lua init.test.lua

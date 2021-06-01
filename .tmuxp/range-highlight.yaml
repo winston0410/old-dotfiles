@@ -1,13 +1,13 @@
 ---
-session_name: "range-highlight.nvim development"
+session_name: "range-highlight development"
 windows:
   - window_name: "init.lua"
     layout: tiled
     shell_command_before:
-      - cd ~/.local/share/nvim/site/pack/paqs/start/cmd-parser.nvim/lua/cmd-parser
+      - cd ~/.local/share/nvim/site/pack/paqs/start/range-highlight.nvim/lua/range-highlight
       - vim init.lua
-  - window_name: "helper.lua"
+  - window_name: "git log"
     layout: tiled
     shell_command_before:
-      - cd ~/.local/share/nvim/site/pack/paqs/start/cmd-parser.nvim/lua/cmd-parser
-      - vim init.test.lua
+      - cd ~/.local/share/nvim/site/pack/paqs/start/range-highlight.nvim/lua/range-highlight
+      - git log --oneline --graph
