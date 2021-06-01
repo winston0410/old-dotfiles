@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  # time.timeZone = Hongkong;
   environment.systemPackages = [
     pkgs.nixfmt
     pkgs.alacritty
@@ -18,6 +19,11 @@
     pkgs.deno
     pkgs.nmap
     pkgs.zsh-syntax-highlighting
+    pkgs.nodejs-16_x
+    pkgs.hadolint
+    pkgs.shellcheck
+    pkgs.direnv
+    pkgs.exa
   ];
   system.stateVersion = 4;
   nix.useDaemon = true;
@@ -26,40 +32,66 @@
     NIX_REMOTE = "daemon";
     GOPATH = "$HOME/go";
     TMUXP_CONFIGDIR = "$HOME/.tmuxp";
-    # export PATH="$HOME/Library/Python/3.9/bin:$PATH"
-    # export PATH="$HOME/go/bin:$PATH"
   };
 
   # shell config
   environment.shells = [ "/run/current-system/sw/bin/zsh" ];
-environment.interactiveShellInit = ''
-alias find="fd"
-alias grep="rg"
-alias vi="nvim"
-alias vim="nvim"
-alias vimdiff="nvim -d"
-alias ls="exa --icons"
-alias dotfiles='/usr/bin/git --git-dir=$home/.dotfiles/ --work-tree=$home'
-# use gcc10 instead of appleclang
-alias gcc='gcc-11'
-alias cc='gcc-11'
-alias g++='g++-11'
-alias c++='c++-11'
-# add pip3 alias
-alias pip="pip3.9"
-# fzf with preview
-alias pfzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
-# Load tmuxp config
-alias start="sh ~/.tmuxp/start.sh"
-'';
+  environment.systemPath = [ "$HOME/go/bin" "$HOME/Library/Python/3.9/bin" ];
+  environment.interactiveShellInit = ''
+            alias find="fd"
+            alias grep="rg"
+            alias vi="nvim"
+            alias vim="nvim"
+            alias vimdiff="nvim -d"
+            alias ls="exa --icons"
+            # use gcc10 instead of appleclang
+            alias gcc='gcc-11'
+            alias cc='gcc-11'
+            alias g++='g++-11'
+            alias c++='c++-11'
+            # add pip3 alias
+            alias pip="pip3.9"
+            # fzf with preview
+            alias pfzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+            # Load tmuxp config
+            alias start="sh ~/.tmuxp/start.sh"
+
+			alias dotfiles='/run/current-system/sw/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+    		# Change cmake compiler
+        	export CC=$(which gcc-11)
+        	export CXX=$(which g++-11)
+
+    		alias luamake=/Users/hugosum/.config/standalone/lua-language-server/3rd/luamake/luamake
+          '';
+
+  fonts = {
+    enableFontDir = true;
+    fonts = with pkgs; [ nerdfonts ];
+  };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     enableBashCompletion = true;
     enableFzfHistory = true;
     enableSyntaxHighlighting = true;
-    promptInit = "prompt off";
+    # promptInit = "prompt off";
+    promptInit = "";
   };
+
+  #programs.ssh.knownHosts = [
+
+  # ]
+
+  system.defaults.NSGlobalDomain.AppleFontSmoothing = 2;
+
+  system.defaults.NSGlobalDomain.NSDocumentSaveNewDocumentsToCloud = false;
+
+  system.defaults.finder.QuitMenuItem = true;
+
+  system.defaults.trackpad.ActuationStrength = 1;
+
   # Keyboard
   system.keyboard = {
     enableKeyMapping = true;
@@ -82,7 +114,16 @@ alias start="sh ~/.tmuxp/start.sh"
 
   # Trackpad
   system.defaults.trackpad = {
-    Clicking = true;
-    TrackpadThreeFingerDrag = true;
+    Clicking = false;
+    TrackpadThreeFingerDrag = false;
   };
+
+  # Nix config
+  nix.binaryCaches = [ "https://cache.nixos.org" ];
+  nix.trustedBinaryCaches = [ "https://cache.nixos.org" ];
+
+  nix.buildCores = 2;
+
+  nix.gc.automatic = true;
+
 }
