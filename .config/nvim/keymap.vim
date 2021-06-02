@@ -11,6 +11,9 @@ let mapleader=" "
 "Copy into clipboard buffer
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
+
+nnoremap <leader>d "+d
+vnoremap <leader>d "+d
 "snoremap <leader>y "+y
 "xnoremap <leader>y "+y
 " Auto indent paste content
@@ -32,7 +35,7 @@ nnoremap Y y$
 nnoremap S <NOP>
 nnoremap s <NOP>
 "Remain in normal mode with o and O
-nnoremap o o<Esc>
+nnoremap o o<esc><cmd>lua require('smart-cursor').indent_cursor()<cr>
 " Break a line in normal mode
 nnoremap <C-J> i<CR><ESC>
 "Redo with r

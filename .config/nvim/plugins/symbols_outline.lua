@@ -4,7 +4,7 @@ local function init(paq)
         highlight_hovered_item = true,
         show_guides = true,
         auto_preview = true,
-        position = 'right',
+        position = 'left',
         keymaps = {
             close = "<Esc>",
             goto_location = "<Cr>",

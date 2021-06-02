@@ -1,7 +1,13 @@
 local root_dir = function() return vim.fn.getcwd() end
 
 local on_attach = function(client)
-    -- Show diagonistic messages
+    -- vim.lsp.handlers["textDocument/publishDiagnostics"] =
+        -- vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+            -- virtual_text = true,
+            -- signs = true,
+            -- update_in_insert = true
+        -- })
+    -- -- Show diagonistic messages
     vim.cmd(
         "command! LspNextDiagonistic lua vim.lsp.diagnostic.goto_next{ wrap = true }")
     vim.cmd(
@@ -68,7 +74,7 @@ local function init(paq)
     lspconfig.purescriptls.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.yamlls.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.vimls.setup {on_attach = on_attach, root_dir = root_dir}
-	lspconfig.rnix.setup {on_attach = on_attach, root_dir = root_dir}
+    lspconfig.rnix.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.pyright.setup {
         on_attach = on_attach,
         root_dir = root_dir,
@@ -84,7 +90,7 @@ local function init(paq)
     local yamllint = require('plugins.lsp-servers.yamllint').config
     local fixjson = require('plugins.lsp-servers.fixjson').config
     local flake8 = require('plugins.lsp-servers.flake8').config
-	local golint = require('plugins.lsp-servers.golint').config
+    local golint = require('plugins.lsp-servers.golint').config
 
     lspconfig.efm.setup {
         on_attach = on_attach,
@@ -105,7 +111,7 @@ local function init(paq)
                 dotenv = {dotenv_linter},
                 yaml = {yamllint},
                 json = {fixjson},
-				go = {golint},
+                go = {golint},
                 python = {flake8}
             }
         },

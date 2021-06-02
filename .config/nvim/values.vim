@@ -13,7 +13,7 @@ set linebreak
 " Enable syntax
 syntax enable
 "Highlight current line
-set cursorline
+"set cursorline
 "Disable file backup
 set nobackup
 set nowritebackup
