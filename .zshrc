@@ -1,40 +1,19 @@
+source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
 # Alias
-alias ls="exa --icons"
-alias vi="nvim"
-alias vim="nvim"
-alias vimdiff="nvim -d"
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-# Use gcc10 instead of AppleClang
-alias gcc='gcc-11'
-alias cc='gcc-11'
-alias g++='g++-11'
-alias c++='c++-11'
-# Add pip3 alias
-alias pip="pip3.9"
-# Use faster alternatives
-alias find="fd"
-alias grep="rg"
-# fzf with preview
-alias pfzf="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
-# Load tmuxp config
-alias start="sh ~/.tmuxp/start.sh"
 #Non essential
 # Keybindings
 # Enter vi mode
-# bindkey '^[' vi-cmd-mode
-# tabtab source for packages
+bindkey '^[' vi-cmd-mode
+#  path for neovim installed by nix
+#  /run/current-system/sw/bin/nvim
+# alias nvim="/usr/local/opt/neovim"
+# alias vim="/usr/local/opt/neovim"
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-# Add path for getting Python packages
-BINARY_DIR="/usr/local"
-export PATH="$HOME/Library/Python/3.9/bin:$PATH"
-# Add path for getting go binary
-export PATH="$HOME/go/bin:$PATH"
-export GOPATH=$HOME/go
-export TMUXP_CONFIGDIR=$HOME/.tmuxp
-# Change cmake compiler
-export CC=$(which gcc-11)
-export CXX=$(which g++-11)
+#  Path for nix darwin
+export NIX_PATH=darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels:$NIX_PATH
+#  set variable for daemon
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -74,20 +53,12 @@ zinit wait lucid light-mode for \
 	OMZP::brew \
 	OMZP::deno \
 	OMZP::docker-compose \
-	OMZP::tmux \
 	OMZP::gitfast \
 	OMZP::pip \
 	OMZP::golang \
+	# OMZP::tmux \
 	# OMZP::rustup/_rustup \
 
-		[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-	export FZF_DEFAULT_COMMAND='fd --type file'
-	export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-	export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
-	--color=fg:#c5cdd9,bg:#262729,hl:#6cb6eb 
-	--color=fg+:#c5cdd9,bg+:#262729,hl+:#5dbbc1 
-	--color=info:#88909f,prompt:#ec7279,pointer:#d38aea 
-	--color=marker:#a0c980,spinner:#ec7279,header:#5dbbc1'
-	export FZF_COMPLETION_OPTS="--height 100% --preview 'bat --style=numbers --color=always --line-range :500 {}'"
-
-alias luamake=/Users/hugosum/.config/standalone/lua-language-server/3rd/luamake/luamake
+	#  Disable fzf keybindings here as it is now set in nix
+	#  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+	source ./fzf-setting.zsh
