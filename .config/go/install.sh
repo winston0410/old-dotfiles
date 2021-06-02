@@ -8,6 +8,7 @@ PACKAGES=$(
 USER_PACKAGES=$(
 	cat <<-END
 		github.com/jessfraz/dockfmt
+            github.com/lighttiger2505/sqls
 	END
 )
 
