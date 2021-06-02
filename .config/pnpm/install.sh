@@ -2,6 +2,7 @@
 npm install -g pnpm
 #Install all global packages
 PACKAGES=$(cat <<-END
+pnpm
 bash-language-server
 vscode-css-languageserver-bin
 dockerfile-language-server-nodejs
@@ -13,6 +14,7 @@ svelte-language-server
 typescript typescript-language-server
 vim-language-server
 yaml-language-server
+@angular/language-server
 vls
 pyright
 END
