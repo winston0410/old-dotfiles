@@ -1,6 +1,14 @@
 { config, pkgs, ... }:
 
 {
+
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url =
+        "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
+    }))
+  ];
+
   # time.timeZone = Hongkong;
   environment.systemPackages = [
     pkgs.nixfmt
@@ -25,7 +33,12 @@
     pkgs.direnv
     pkgs.cachix
     pkgs.exa
+    # pkgs.neovim-nightly
+    pkgs.rnix-lsp
   ];
+
+  # use nix-community cache, run once only
+  # cachix use nix-community
   system.stateVersion = 4;
 
   environment.variables = {
@@ -36,7 +49,12 @@
 
   # shell config
   environment.shells = [ "/run/current-system/sw/bin/zsh" ];
-  environment.systemPath = [ "$HOME/go/bin" "$HOME/Library/Python/3.9/bin" ];
+  environment.systemPath = [
+    "$HOME/go/bin"
+    "$HOME/Library/Python/3.9/bin"
+    "$HOME/.npm-global/bin"
+    "$HOME/.self-built"
+  ];
   environment.interactiveShellInit = ''
                 alias find="fd"
                 alias grep="rg"
@@ -84,38 +102,33 @@
 
   # ]
 
-  system.defaults.NSGlobalDomain.AppleFontSmoothing = 2;
-
-  system.defaults.NSGlobalDomain.NSDocumentSaveNewDocumentsToCloud = false;
-
-  system.defaults.finder.QuitMenuItem = true;
-
-  system.defaults.trackpad.ActuationStrength = 1;
+  system.defaults = {
+    NSGlobalDomain = {
+      AppleFontSmoothing = 2;
+      NSDocumentSaveNewDocumentsToCloud = false;
+    };
+    finder = {
+      QuitMenuItem = true;
+      AppleShowAllExtensions = true;
+      _FXShowPosixPathInTitle = true;
+      FXEnableExtensionChangeWarning = false;
+    };
+    trackpad = {
+      ActuationStrength = 1;
+      Clicking = false;
+      TrackpadThreeFingerDrag = false;
+    };
+    dock = {
+      autohide = true;
+      mru-spaces = false;
+      minimize-to-application = true;
+    };
+  };
 
   # Keyboard
   system.keyboard = {
     enableKeyMapping = true;
     remapCapsLockToControl = true;
-  };
-
-  # Dock configuration
-  system.defaults.dock = {
-    autohide = true;
-    mru-spaces = false;
-    minimize-to-application = true;
-  };
-
-  # Finder configuration
-  system.defaults.finder = {
-    AppleShowAllExtensions = true;
-    _FXShowPosixPathInTitle = true;
-    FXEnableExtensionChangeWarning = false;
-  };
-
-  # Trackpad
-  system.defaults.trackpad = {
-    Clicking = false;
-    TrackpadThreeFingerDrag = false;
   };
 
   nix = {
