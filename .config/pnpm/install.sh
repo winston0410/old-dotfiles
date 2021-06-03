@@ -1,8 +1,12 @@
+# https://nixos.wiki/wiki/Node.js
+# Run once for setting location for npm
+# npm set prefix ~/.npm-global
 #Install pnpm
-npm install -g pnpm
+# npm install -g pnpm
 #Install all global packages
 PACKAGES=$(cat <<-END
 pnpm
+neovim
 bash-language-server
 vscode-css-languageserver-bin
 dockerfile-language-server-nodejs
@@ -17,6 +21,7 @@ yaml-language-server
 @angular/language-server
 vls
 pyright
+expo-cli
 END
 )
 
