@@ -45,6 +45,7 @@
     NIX_REMOTE = "daemon";
     GOPATH = "$HOME/go";
     TMUXP_CONFIGDIR = "$HOME/.tmuxp";
+	WEZTERM_CONFIG_FILE = "$HOME/.config/wezterm/config.lua";
   };
 
   # shell config
