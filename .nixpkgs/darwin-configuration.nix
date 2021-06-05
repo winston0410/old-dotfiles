@@ -33,6 +33,7 @@
     pkgs.direnv
     pkgs.cachix
     pkgs.exa
+	pkgs.pandoc
     # pkgs.neovim-nightly
     pkgs.rnix-lsp
   ];
