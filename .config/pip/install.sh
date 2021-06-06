@@ -2,6 +2,7 @@ PACKAGES=$(cat <<-END
 tmuxp
 yamllint
 flake8
+cmake-language-server
 END
 )
 
