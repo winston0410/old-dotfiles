@@ -55,7 +55,7 @@
     "$HOME/go/bin"
     "$HOME/Library/Python/3.9/bin"
     "$HOME/.npm-global/bin"
-    "$HOME/.self-built"
+    "$HOME/.self-built/bin"
   ];
   environment.interactiveShellInit = ''
                 alias find="fd"
