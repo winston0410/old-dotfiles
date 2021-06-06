@@ -36,6 +36,7 @@ local function init(paq)
     lspconfig.graphql.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.angularls.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.bashls.setup {on_attach = on_attach, root_dir = root_dir}
+	lspconfig.kotlin_language_server.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.cmake.setup {
         cmd = {"cmake-language-server"},
         filetypes = {"cmake"},
