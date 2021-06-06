@@ -2,11 +2,11 @@ local root_dir = function() return vim.fn.getcwd() end
 
 local on_attach = function(client)
     -- vim.lsp.handlers["textDocument/publishDiagnostics"] =
-        -- vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-            -- virtual_text = true,
-            -- signs = true,
-            -- update_in_insert = true
-        -- })
+    -- vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+    -- virtual_text = true,
+    -- signs = true,
+    -- update_in_insert = true
+    -- })
     -- -- Show diagonistic messages
     vim.cmd(
         "command! LspNextDiagonistic lua vim.lsp.diagnostic.goto_next{ wrap = true }")
@@ -36,6 +36,12 @@ local function init(paq)
     lspconfig.graphql.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.angularls.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.bashls.setup {on_attach = on_attach, root_dir = root_dir}
+    lspconfig.cmake.setup {
+        cmd = {"cmake-language-server"},
+        filetypes = {"cmake"},
+        on_attach = on_attach,
+        root_dir = root_dir
+    }
     local sumneko_root_path = os.getenv("HOME") ..
                                   "/.config/standalone/lua-language-server"
     local sumneko_binary = sumneko_root_path .. "/bin/macOS/lua-language-server"
