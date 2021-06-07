@@ -85,6 +85,7 @@ local function init(paq)
             },
             -- lua = { stylua },
             lua = {luafmt},
+			-- teal = {luafmt},
             rust = {rustfmt},
             nix = {nixfmt}
         }

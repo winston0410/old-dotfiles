@@ -36,7 +36,10 @@ local function init(paq)
     lspconfig.graphql.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.angularls.setup {on_attach = on_attach, root_dir = root_dir}
     lspconfig.bashls.setup {on_attach = on_attach, root_dir = root_dir}
-	lspconfig.kotlin_language_server.setup {on_attach = on_attach, root_dir = root_dir}
+    lspconfig.kotlin_language_server.setup {
+        on_attach = on_attach,
+        root_dir = root_dir
+    }
     lspconfig.cmake.setup {
         cmd = {"cmake-language-server"},
         filetypes = {"cmake"},
@@ -98,6 +101,8 @@ local function init(paq)
     local fixjson = require('plugins.lsp-servers.fixjson').config
     local flake8 = require('plugins.lsp-servers.flake8').config
     local golint = require('plugins.lsp-servers.golint').config
+    local checkmake = require('plugins.lsp-servers.checkmake').config
+	local clippy = require('plugins.lsp-servers.clippy').config
 
     lspconfig.efm.setup {
         on_attach = on_attach,
@@ -119,7 +124,9 @@ local function init(paq)
                 yaml = {yamllint},
                 json = {fixjson},
                 go = {golint},
-                python = {flake8}
+                python = {flake8},
+                make = {checkmake},
+                rust = {clippy}
             }
         },
         filetypes = {
