@@ -1,3 +1,5 @@
+local helper = require("./helper")
+
 local root_dir = function() return vim.fn.getcwd() end
 
 local on_attach = function(client)
@@ -102,9 +104,9 @@ local function init(paq)
     local flake8 = require('plugins.lsp-servers.flake8').config
     local golint = require('plugins.lsp-servers.golint').config
     local checkmake = require('plugins.lsp-servers.checkmake').config
-	local clippy = require('plugins.lsp-servers.clippy').config
+    local clippy = require('plugins.lsp-servers.clippy').config
 
-    lspconfig.efm.setup {
+    local efm_config = {
         on_attach = on_attach,
         root_dir = root_dir,
         settings = {
@@ -128,13 +130,12 @@ local function init(paq)
                 make = {checkmake},
                 rust = {clippy}
             }
-        },
-        filetypes = {
-            "dotenv", "json", "yaml", "sh", "zsh", "dockerfile", "markdown",
-            "javascript", "javascriptreact", "javascript.jsx", "typescript",
-            "typescript.tsx", "typescriptreact", "python"
         }
     }
+
+    efm_config.filetypes = helper.get_table_keys(efm_config.settings.languages)
+
+    lspconfig.efm.setup(efm_config)
 
     lspconfig.gopls.setup {
         on_attach = on_attach,
