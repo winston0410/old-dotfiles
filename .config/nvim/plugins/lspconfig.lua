@@ -1,4 +1,4 @@
-local helper = require("./helper")
+local helper = require("plugins.helper")
 
 local root_dir = function() return vim.fn.getcwd() end
 
@@ -134,7 +134,7 @@ local function init(paq)
     }
 
     efm_config.filetypes = helper.get_table_keys(efm_config.settings.languages)
-
+    
     lspconfig.efm.setup(efm_config)
 
     lspconfig.gopls.setup {
