@@ -1,0 +1,11 @@
+---
+session_name: "Learning materials"
+windows:
+  - window_name: "Root directory"
+    layout: tiled
+    shell_command_before:
+      - cd ~/Desktop/learning-materials
+  - window_name: "Root directory2"
+    layout: tiled
+    shell_command_before:
+      - cd ~/Desktop/learning-materials
