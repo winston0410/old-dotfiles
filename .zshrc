@@ -5,11 +5,7 @@ source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
 # Keybindings
 # Enter vi mode
 bindkey '^[' vi-cmd-mode
-#  path for neovim installed by nix
-#  /run/current-system/sw/bin/nvim
-# alias nvim="/usr/local/opt/neovim"
-# alias vim="/usr/local/opt/neovim"
-# uninstall by removing these lines
+unsetopt share_history
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 #  Path for nix darwin
 export NIX_PATH=darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels:$NIX_PATH
