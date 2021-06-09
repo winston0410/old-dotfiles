@@ -33,6 +33,7 @@ END
 )
 
 FORMATTER=$(cat <<-END
+purty
 prettier
 prettier-plugin-sh
 prettier-plugin-toml
