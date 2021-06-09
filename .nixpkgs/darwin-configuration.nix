@@ -38,6 +38,8 @@
 	pkgs.watchman
     /* pkgs.neovim-nightly */
     pkgs.rnix-lsp
+	pkgs.ktlint
+    pkgs.cocoapods
   ];
 
   # use nix-community cache, run once only
@@ -58,6 +60,7 @@
     "$HOME/Library/Python/3.9/bin"
     "$HOME/.npm-global/bin"
     "$HOME/.self-built/bin"
+	"$HOME/.local/bin"
   ];
   environment.interactiveShellInit = ''
                     alias find="fd"
