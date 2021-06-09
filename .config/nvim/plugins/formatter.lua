@@ -6,6 +6,14 @@ local function prettier()
 	}
 end
 
+local function purty()
+	return {
+		exe = "purty",
+		args = { "--", vim.api.nvim_buf_get_name(0) },
+		stdin = true,
+	}
+end
+
 local function dockfmt()
 	return {
 		exe = "dockfmt",
@@ -17,6 +25,14 @@ end
 local function gofmt()
 	return {
 		exe = "gofmt",
+		args = { "--", vim.api.nvim_buf_get_name(0) },
+		stdin = true,
+	}
+end
+
+local function dartfmt()
+	return {
+		exe = "dartfmt",
 		args = { "--", vim.api.nvim_buf_get_name(0) },
 		stdin = true,
 	}
@@ -72,6 +88,14 @@ local function black()
 		stdin = false,
 	}
 end
+local function hindent()
+	return {
+		exe = "hindent",
+		-- args = {"-w", "--", vim.api.nvim_buf_get_name(0)},
+		args = { "--", vim.api.nvim_buf_get_name(0) },
+		stdin = false,
+	}
+end
 
 local function init(paq)
 	paq({ "winston0410/formatter.nvim" })
@@ -82,6 +106,7 @@ local function init(paq)
 			css = { prettier },
 			scss = { prettier },
 			sass = { prettier },
+			less = { prettier },
 			javascript = { prettier },
 			typescript = { prettier },
 			javascriptreact = { prettier },
@@ -106,6 +131,9 @@ local function init(paq)
 			rust = { rustfmt },
 			nix = { nixfmt },
 			go = { gofmt },
+			dart = { dartfmt },
+			haskell = { hindent },
+			purescript = { purty },
 		},
 	})
 	vim.cmd([[ nnoremap <silent> <C-F> <cmd>write <bar> Format<CR>  ]])
