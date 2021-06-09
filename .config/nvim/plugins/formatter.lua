@@ -6,6 +6,14 @@ local function prettier()
 	}
 end
 
+local function ktlint()
+	return {
+		exe = "ktlint",
+		args = { "--format", vim.api.nvim_buf_get_name(0) },
+		stdin = false,
+	}
+end
+
 local function purty()
 	return {
 		exe = "purty",
@@ -134,6 +142,7 @@ local function init(paq)
 			dart = { dartfmt },
 			haskell = { hindent },
 			purescript = { purty },
+			kotlin = { ktlint },
 		},
 	})
 	vim.cmd([[ nnoremap <silent> <C-F> <cmd>write <bar> Format<CR>  ]])
