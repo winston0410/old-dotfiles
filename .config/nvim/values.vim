@@ -12,6 +12,7 @@ set wrap
 set linebreak
 " Enable syntax
 syntax enable
+filetype plugin indent on
 "Highlight current line
 "set cursorline
 "Disable file backup

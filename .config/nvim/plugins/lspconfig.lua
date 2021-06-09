@@ -3,13 +3,8 @@ local helper = require("plugins.helper")
 local root_dir = function() return vim.fn.getcwd() end
 
 local on_attach = function(client)
-    -- vim.lsp.handlers["textDocument/publishDiagnostics"] =
-    -- vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    -- virtual_text = true,
-    -- signs = true,
-    -- update_in_insert = true
-    -- })
-    -- -- Show diagonistic messages
+    -- -- Show diagonistic messages on cursorHold
+    vim.cmd("autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()")
     vim.cmd(
         "command! LspNextDiagonistic lua vim.lsp.diagnostic.goto_next{ wrap = true }")
     vim.cmd(
@@ -155,6 +150,13 @@ local function init(paq)
             gopls = {analyses = {unusedparams = true}, staticcheck = true}
         }
     }
+
+    -- vim.lsp.handlers["textdocument/publishdiagnostics"] =
+        -- vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+            -- virtual_text = true,
+            -- signs = true,
+            -- update_in_insert = true
+        -- })
 end
 
 return {init = init}

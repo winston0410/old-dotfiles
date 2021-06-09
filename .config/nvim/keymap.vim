@@ -36,6 +36,7 @@ nnoremap S <NOP>
 nnoremap s <NOP>
 "Remain in normal mode with o and O
 nnoremap o o<esc><cmd>lua require('smart-cursor').indent_cursor()<cr>
+" nnoremap o o<esc>
 " Break a line in normal mode
 nnoremap <C-J> i<CR><ESC>
 "Redo with r
