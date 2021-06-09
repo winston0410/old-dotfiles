@@ -30,7 +30,17 @@ local function init(paq)
     lspconfig.html.setup {root_dir = root_dir, on_attach = on_attach}
     lspconfig.cssls.setup {root_dir = root_dir, on_attach = on_attach}
     lspconfig.jsonls.setup {root_dir = root_dir, on_attach = on_attach}
-    lspconfig.rust_analyzer.setup {root_dir = root_dir, on_attach = on_attach}
+    lspconfig.rust_analyzer.setup {
+        root_dir = root_dir,
+        on_attach = on_attach,
+        checkOnSave = {
+            allFeatures = true,
+            overrideCommand = {
+                'cargo', 'clippy', '--workspace', '--message-format=json',
+                '--all-targets', '--all-features'
+            }
+        }
+    }
     lspconfig.dartls.setup {root_dir = root_dir, on_attach = on_attach}
     lspconfig.svelte.setup {root_dir = root_dir}
     lspconfig.vuels.setup {root_dir = root_dir, on_attach = on_attach}
@@ -127,14 +137,14 @@ local function init(paq)
                 json = {fixjson},
                 go = {golint},
                 python = {flake8},
-                make = {checkmake},
-                rust = {clippy}
+                make = {checkmake}
+                -- rust = {clippy}
             }
         }
     }
 
     efm_config.filetypes = helper.get_table_keys(efm_config.settings.languages)
-    
+
     lspconfig.efm.setup(efm_config)
 
     lspconfig.gopls.setup {

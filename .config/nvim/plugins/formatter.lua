@@ -57,7 +57,7 @@ local function stylua()
 end
 
 local function init(paq)
-    paq({"mhartington/formatter.nvim"})
+    paq({"winston0410/formatter.nvim"})
     require("formatter").setup({
         logging = false,
         filetype = {
