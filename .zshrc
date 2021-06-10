@@ -1,11 +1,10 @@
 source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
-# Alias
-#Non essential
-# Keybindings
 # Enter vi mode
 bindkey '^[' vi-cmd-mode
+KEYTIMEOUT=1
 unsetopt share_history
+
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 #  Path for nix darwin
 export NIX_PATH=darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels:$NIX_PATH
