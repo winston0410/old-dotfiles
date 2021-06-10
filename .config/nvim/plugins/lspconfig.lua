@@ -4,7 +4,8 @@ local root_dir = function() return vim.fn.getcwd() end
 
 local on_attach = function(client)
     -- -- Show diagonistic messages on cursorHold
-    vim.cmd("autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()")
+    vim.cmd(
+        "autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({ focusable = false })")
     vim.cmd(
         "command! LspNextDiagonistic lua vim.lsp.diagnostic.goto_next{ wrap = true }")
     vim.cmd(
@@ -37,6 +38,7 @@ local function init(paq)
         }
     }
     lspconfig.dartls.setup {root_dir = root_dir, on_attach = on_attach}
+	lspconfig.ccls.setup {root_dir = root_dir, on_attach = on_attach}
     lspconfig.svelte.setup {root_dir = root_dir}
     lspconfig.vuels.setup {root_dir = root_dir, on_attach = on_attach}
     lspconfig.sqls.setup {on_attach = on_attach, root_dir = root_dir}
@@ -109,7 +111,7 @@ local function init(paq)
     local flake8 = require('plugins.lsp-servers.flake8').config
     local golint = require('plugins.lsp-servers.golint').config
     local checkmake = require('plugins.lsp-servers.checkmake').config
-    local clippy = require('plugins.lsp-servers.clippy').config
+	local vint = require('plugins.lsp-servers.vint').config
 
     local efm_config = {
         on_attach = on_attach,
@@ -132,8 +134,8 @@ local function init(paq)
                 json = {fixjson},
                 go = {golint},
                 python = {flake8},
-                make = {checkmake}
-                -- rust = {clippy}
+                make = {checkmake},
+				vim = {vint}
             }
         }
     }
@@ -152,11 +154,11 @@ local function init(paq)
     }
 
     -- vim.lsp.handlers["textdocument/publishdiagnostics"] =
-        -- vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-            -- virtual_text = true,
-            -- signs = true,
-            -- update_in_insert = true
-        -- })
+    -- vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+    -- virtual_text = true,
+    -- signs = true,
+    -- update_in_insert = true
+    -- })
 end
 
 return {init = init}

@@ -1,5 +1,5 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
--- TSInstall dart yaml vue tsx typescript toml teal svelte rust lua json javascript html go bash nix
+-- TSInstall dart yaml vue tsx typescript toml teal svelte rust lua json javascript html go bash nix fennel
 local function init(paq)
     paq {'nvim-treesitter/nvim-treesitter'}
     paq {'nvim-treesitter/playground'}

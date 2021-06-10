@@ -4,6 +4,7 @@ set termguicolors
 set mouse=nvic
 "Reduce time to wait for key combo
 set timeoutlen=400
+set ttimeoutlen=0
 set updatetime=500
 " Hide mode message
 set noshowmode
@@ -40,7 +41,7 @@ set signcolumn=yes
 "For better performance"
 set lazyredraw
 "Minimum rows above and below cursor
-set scrolloff=5
+set scrolloff=8
 "Use smartcase for search
 set ignorecase smartcase
 "Ensure magic is on
