@@ -1,3 +1,11 @@
+local function fnlfmt()
+	return {
+		exe = "fnlfmt",
+		args = { vim.api.nvim_buf_get_name(0) },
+		stdin = true,
+	}
+end
+
 local function prettier()
 	return {
 		exe = "prettier",
@@ -143,6 +151,7 @@ local function init(paq)
 			haskell = { hindent },
 			purescript = { purty },
 			kotlin = { ktlint },
+			fennel = { fnlfmt },
 		},
 	})
 	vim.cmd([[ nnoremap <silent> <C-F> <cmd>write <bar> Format<CR>  ]])
