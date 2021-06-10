@@ -19,6 +19,8 @@ filetype plugin indent on
 "Disable file backup
 set nobackup
 set nowritebackup
+" Hide unwanted message
+set shortmess+=c
 "Increase the height of command
 set cmdheight=1
 "Highlight matching parenthesis
@@ -32,6 +34,7 @@ set splitright
 "Make yanked content accessible in clipboard"
 "set clipboard=unnamed
 set shiftwidth=4
+set expandtab
 set autoindent
 "set cindent
 filetype plugin indent on
