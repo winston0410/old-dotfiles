@@ -1,15 +1,15 @@
 PACKAGES=$(
 	cat <<-END
 		golang.org/x/tools/gopls@latest
-		golang.org/x/lint/golint
-		golang.org/x/tools/cmd/goimports
 	END
 )
 
 USER_PACKAGES=$(
 	cat <<-END
 		github.com/jessfraz/dockfmt
-		            github.com/lighttiger2505/sqls
+		github.com/lighttiger2505/sqls
+		golang.org/x/tools/cmd/goimports
+		golang.org/x/lint/golint
 	END
 )
 
