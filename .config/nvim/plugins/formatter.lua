@@ -1,3 +1,19 @@
+local function swift_format()
+	return {
+		exe = "swift-format",
+		args = { vim.api.nvim_buf_get_name(0) },
+		stdin = true,
+	}
+end
+
+local function clang_format()
+	return {
+		exe = "clang-format",
+		args = { vim.api.nvim_buf_get_name(0) },
+		stdin = true,
+	}
+end
+
 local function goimports()
 	return {
 		exe = "goimports",
@@ -160,6 +176,10 @@ local function init(paq)
 			purescript = { purty },
 			kotlin = { ktlint },
 			fennel = { fnlfmt },
+			cpp = { clang_format },
+			c = { clang_format },
+			cs = { clang_format },
+			swift = { swift_format },
 		},
 	})
 	vim.cmd([[ nnoremap <silent> <C-F> <cmd>write <bar> Format<CR>  ]])
