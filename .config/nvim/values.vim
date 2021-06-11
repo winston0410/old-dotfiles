@@ -51,6 +51,9 @@ set ignorecase smartcase
 set magic
 "Use a login shell for using .bash_profile
 let &shell='/bin/zsh --login'
+" Use ripgrep for :grep
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+set grepformat=%f:%l:%c:%m
 "Set theme value"
 set wildmenu
 set wildmode=longest:full,full
