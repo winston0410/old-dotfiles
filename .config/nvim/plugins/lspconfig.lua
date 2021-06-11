@@ -97,7 +97,7 @@ local function init(paq)
     lspconfig.pyright.setup {
         on_attach = on_attach,
         root_dir = root_dir,
-        cmd = {"pyright", "--stdio"}
+        cmd = {"pyright-langserver", "--stdio"}
     }
 
     local eslint = require('plugins.lsp-servers.eslint').config
