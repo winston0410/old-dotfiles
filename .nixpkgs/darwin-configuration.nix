@@ -38,8 +38,10 @@
 	pkgs.watchman
     /* pkgs.neovim-nightly */
     pkgs.rnix-lsp
+	pkgs.ccls
 	pkgs.ktlint
     pkgs.cocoapods
+    pkgs.watchexec
   ];
 
   # use nix-community cache, run once only
