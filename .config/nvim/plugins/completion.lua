@@ -1,3 +1,6 @@
+local rp_source = require("plugins.rg_source")
+local compe = require("compe")
+
 local function init(paq)
 	vim.o.completeopt = "menuone,noselect"
 
@@ -6,7 +9,9 @@ local function init(paq)
 	paq({ "winston0410/friendly-snippets" })
 	paq({ "hrsh7th/nvim-compe" })
 
-	require("compe").setup({
+	compe.register_source("ripgrep", rp_source)
+
+	compe.setup({
 		enabled = true,
 		autocomplete = true,
 		debug = false,
@@ -21,14 +26,14 @@ local function init(paq)
 		documentation = true,
 
 		source = {
-			path = true,
+			path = { priority = 80 },
 			buffer = { ignored_filetypes = { "sql" }, priority = 90 },
 			tags = { ignored_filetypes = { "sql" }, priority = 80 },
-			calc = true,
-			nvim_lsp = true,
-			nvim_lua = true,
-			vsnip = true,
-			ripgrep = { ignored_filetypes = { "sql" } },
+			calc = { priority = 20 },
+			nvim_lsp = { priority = 95 },
+			nvim_lua = { priority = 50 },
+			vsnip = { priority = 100 },
+			ripgrep = { priority = 70, ignored_filetypes = { "sql" } },
 		},
 	})
 
