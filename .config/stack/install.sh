@@ -1,6 +1,7 @@
 PACKAGES=$(
 	cat <<-END
-		hindent
+		    dhall-lsp-server
+		    hindent
 	END
 )
 
