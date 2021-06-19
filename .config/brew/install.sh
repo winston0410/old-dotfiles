@@ -1,7 +1,7 @@
-# TAPS=$(cat<<-END
-# dart-lang/dart
-# END
-# )
+TAPS=$(cat<<-END
+wez/wezterm
+END
+)
 
 FORMULAS=$(cat<<-END
 mongodb/brew/mongodb-community
@@ -13,6 +13,7 @@ luarocks
 dotenv-linter
 gcc
 llvm
+clang-format
 python
 shfmt
 rustup
@@ -23,17 +24,14 @@ CASKS=$(cat<<-END
 alacritty
 insomnia
 devdocs
+keycastr
+wezterm
+flutter
 END
 )
-
-# POST_INSTALL=$(cat <<-END
-# node
-# END
-# )
 
 brew tap $TAPS
 brew install --cask $CASKS
 brew install $FORMULAS
-brew postinstall $POST_INSTALL
 # Enable fzf keybinding, run it once only
 # $(brew --prefix)/opt/fzf/install
