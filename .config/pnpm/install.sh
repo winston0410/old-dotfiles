@@ -8,11 +8,9 @@ PACKAGES=$(cat <<-END
 pnpm
 neovim
 bash-language-server
-vscode-css-languageserver-bin
+vscode-langservers-extracted
 dockerfile-language-server-nodejs
 graphql graphql-language-service-cli
-vscode-html-languageserver-bin
-vscode-json-languageserver
 purescript-language-server
 svelte-language-server
 typescript typescript-language-server
@@ -21,6 +19,7 @@ yaml-language-server
 @angular/language-server
 vls
 pyright
+@prisma/language-server
 expo-cli
 END
 )
@@ -40,6 +39,7 @@ prettier-plugin-toml
 svelte prettier-plugin-svelte
 @prettier/plugin-xml
 fixjson
+elm-format
 END
 )
 
