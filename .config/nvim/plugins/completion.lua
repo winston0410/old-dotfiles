@@ -1,4 +1,3 @@
-local rp_source = require("plugins.rg_source")
 local compe = require("compe")
 
 local function init(paq)
@@ -8,8 +7,7 @@ local function init(paq)
 	-- paq {"rafamadriz/friendly-snippets"}
 	paq({ "winston0410/friendly-snippets" })
 	paq({ "hrsh7th/nvim-compe" })
-
-	compe.register_source("ripgrep", rp_source)
+	paq({ "andersevenrud/compe-tmux" })
 
 	compe.setup({
 		enabled = true,
@@ -29,11 +27,13 @@ local function init(paq)
 			path = { priority = 80 },
 			buffer = { ignored_filetypes = { "sql" }, priority = 90 },
 			tags = { ignored_filetypes = { "sql" }, priority = 80 },
-			calc = { priority = 20 },
+			-- calc = { priority = 20 },
+			spell = { priority = 20 },
 			nvim_lsp = { priority = 95 },
 			nvim_lua = { priority = 50 },
 			vsnip = { priority = 100 },
-			ripgrep = { priority = 70, ignored_filetypes = { "sql" } },
+			rg = { priority = 70, ignored_filetypes = { "sql" } },
+            -- tmux = { priority = 60, ignored_filetypes = { "sql" } },
 		},
 	})
 

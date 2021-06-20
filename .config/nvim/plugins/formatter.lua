@@ -1,3 +1,20 @@
+local function elm_format()
+    -- Not working
+	return {
+		exe = "elm-format",
+		args = { "--", vim.api.nvim_buf_get_name(0) },
+		stdin = false,
+	}
+end
+
+local function styler()
+	return {
+		exe = "",
+		args = { vim.api.nvim_buf_get_name(0) },
+		stdin = true,
+	}
+end
+
 local function swift_format()
 	return {
 		exe = "swift-format",
@@ -98,7 +115,7 @@ local function nixfmt()
 	return {
 		exe = "nixfmt",
 		args = { "--", vim.api.nvim_buf_get_name(0) },
-		stdin = true,
+		stdin = false,
 	}
 end
 
@@ -163,6 +180,7 @@ local function init(paq)
 			svelte = { prettier },
 			python = { black },
 			dockerfile = { dockfmt },
+			-- No formatter for make
 			make = {
 				-- prettier
 			},
@@ -180,9 +198,12 @@ local function init(paq)
 			c = { clang_format },
 			cs = { clang_format },
 			swift = { swift_format },
+			r = { styler },
+			elm = { elm_format },
 		},
 	})
-	vim.cmd([[ nnoremap <silent> <C-F> <cmd>write <bar> Format<CR>  ]])
+	-- vim.cmd([[ nnoremap <silent> <C-F> <cmd>FormatWrite<CR>  ]])
+    vim.cmd([[ nnoremap <silent> <C-F> <cmd>write <bar> Format<CR>  ]])
 	-- vim.api.nvim_exec([[
 	-- augroup FormatAutogroup
 	-- autocmd!

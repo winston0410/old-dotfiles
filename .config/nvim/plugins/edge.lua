@@ -1,12 +1,12 @@
 local function init(paq)
-    paq {'folke/tokyonight.nvim'}
-    vim.g.tokyonight_style = "night"
-    vim.cmd 'colorscheme tokyonight'
-    -- paq {'navarasu/onedark.nvim'}
-    -- vim.cmd 'colorscheme onedark'
+	paq({ "folke/tokyonight.nvim" })
+	vim.g.tokyonight_style = "night"
+	vim.cmd("colorscheme tokyonight")
+	-- paq {'navarasu/onedark.nvim'}
+	-- vim.cmd 'colorscheme onedark'
 end
 
-return {init = init}
+return { init = init }
 
 --
 -- paq{'sainnhe/edge'}
