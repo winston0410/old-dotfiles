@@ -4,7 +4,7 @@ augroup EnvFiletype
 autocmd!
 autocmd BufNewFile,BufRead *.env set filetype=dotenv.sh
 autocmd BufNewFile,BufRead *.tl set filetype=teal
-autocmd BufNewFile,BufRead *.exs set filetype=elixir
+autocmd BufNewFile,BufRead *.exs,*.ex set filetype=elixir
 autocmd BufNewFile,BufRead *.nix set filetype=nix
 autocmd BufNewFile,BufRead *.tmux set filetype=tmux.sh
 autocmd BufNewFile,BufRead *.conf set filetype=sh
