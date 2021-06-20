@@ -1,3 +1,11 @@
+local function mix_format()
+	return {
+		exe = "mix",
+		args = { "format", "--", vim.api.nvim_buf_get_name(0) },
+		stdin = false,
+	}
+end
+
 local function elm_format()
     -- Not working
 	return {
@@ -200,6 +208,7 @@ local function init(paq)
 			swift = { swift_format },
 			r = { styler },
 			elm = { elm_format },
+            elixir = { mix_format },
 		},
 	})
 	-- vim.cmd([[ nnoremap <silent> <C-F> <cmd>FormatWrite<CR>  ]])
