@@ -15,13 +15,3 @@ augroup END
 ]],
 	true
 )
--- Set commentstring for fennel
-vim.api.nvim_exec(
-	[[
-augroup CommentString
-    autocmd!
-	autocmd BufNewFile,BufRead *.fnl set cms=;;%s
-augroup END
-]],
-	true
-)
