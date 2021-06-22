@@ -9,14 +9,14 @@
     }))
   ];
 
-  /* nixpkgs.config = { */
-      /* allowUnsupportedSystem = true; */
-  /* }; */
+  # nixpkgs.config = {
+  # allowUnsupportedSystem = true;
+  # };
 
   # time.timeZone = Hongkong;
   environment.systemPackages = [
     pkgs.nixfmt
-    /* pkgs.alacritty */
+    # pkgs.alacritty
     pkgs.tmux
     pkgs.git
     pkgs.go
@@ -50,6 +50,7 @@
     pkgs.nix-direnv
     pkgs.coreutils
     pkgs.elixir
+    pkgs.beamPackages.elixir_ls
   ];
 
   # use nix-community cache, run once only
