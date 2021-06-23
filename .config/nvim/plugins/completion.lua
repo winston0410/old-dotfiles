@@ -31,7 +31,7 @@ local function init(paq)
 			nvim_lsp = { priority = 95 },
 			nvim_lua = { priority = 50 },
 			vsnip = { priority = 100 },
-			rg = { minimum_input = 3, run_when_completions_less_than = 6, priority = 70, ignored_filetypes = { "sql" } },
+			-- rg = { enabled = false, minimum_input = 3, run_when_completions_less_than = 6, priority = 70, ignored_filetypes = { "sql" } },
             -- tmux = { priority = 60, ignored_filetypes = { "sql" } },
 		},
 	})

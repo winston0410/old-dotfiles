@@ -55,7 +55,7 @@ local function init(paq)
 	lspconfig.angularls.setup({ on_attach = on_attach, root_dir = root_dir })
 	lspconfig.bashls.setup({ on_attach = on_attach, root_dir = root_dir })
 	lspconfig.prismals.setup({ on_attach = on_attach, root_dir = root_dir })
-	lspconfig.zeta_note.setup({ on_attach = on_attach, root_dir = root_dir })
+	-- lspconfig.zeta_note.setup({ on_attach = on_attach, root_dir = root_dir })
 	lspconfig.r_language_server.setup({ on_attach = on_attach, root_dir = root_dir })
 	lspconfig.kotlin_language_server.setup({
 		on_attach = on_attach,
@@ -101,6 +101,9 @@ local function init(paq)
 	lspconfig.tsserver.setup({ root_dir = root_dir, on_attach = on_attach })
 	-- lspconfig.denols.setup {on_attach = on_attach, root_dir = root_dir}
 	lspconfig.dockerls.setup({ on_attach = on_attach, root_dir = root_dir })
+    lspconfig.nimls.setup({ on_attach = on_attach, root_dir = root_dir })
+    lspconfig.metals.setup({ on_attach = on_attach, root_dir = root_dir })
+    lspconfig.julials.setup({ on_attach = on_attach, root_dir = root_dir })
 	lspconfig.purescriptls.setup({ on_attach = on_attach, root_dir = root_dir })
 	lspconfig.yamlls.setup({ on_attach = on_attach, root_dir = root_dir })
 	lspconfig.vimls.setup({ on_attach = on_attach, root_dir = root_dir })
