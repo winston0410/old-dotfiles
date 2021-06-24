@@ -3,7 +3,6 @@ package.path = package.path .. ";" .. vim.fn.getenv("HOME") .. "/.config/nvim/?.
 vim.cmd [[ source $HOME/.config/nvim/keymap.vim ]]
 vim.cmd [[ source $HOME/.config/nvim/command-alias.vim ]]
 vim.cmd [[ source $HOME/.config/nvim/values.vim ]]
-vim.cmd [[ source $HOME/.config/nvim/yaml.vim ]]
 
 vim.cmd 'packadd paq-nvim'         -- Load package
 local paq = require'paq-nvim'.paq  -- Import module and bind `paq` function

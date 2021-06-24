@@ -16,18 +16,12 @@ nnoremap <leader>d "+d
 vnoremap <leader>d "+d
 "snoremap <leader>y "+y
 "xnoremap <leader>y "+y
-" Auto indent paste content
-nnoremap p p`[v`]=
-nnoremap P P`[v`]=
 "Paste from clipboard buffer
-nnoremap <leader>p "+p`[v`]=
-vnoremap <leader>p "+p [v`]=
-"snoremap <leader>p "+p
-"xnoremap <leader>p "+p
-nnoremap <leader>P "+P`[v`]=
-vnoremap <leader>P "+P`[v`]=
-"snoremap <leader>P "+P
-"xnoremap <leader>P "+P
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+
+nnoremap <leader>P "+P
+vnoremap <leader>P "+P
 "Remap Y to y$
 nnoremap Y <NOP>
 nnoremap Y y$
