@@ -50,7 +50,47 @@
     pkgs.nix-direnv
     pkgs.coreutils
     pkgs.elixir
+    pkgs.python39
+    # python package
+    pkgs.python39Packages.black
+    pkgs.python39Packages.flake8
+    pkgs.python39Packages.yamllint
+    /* pkgs.python39Packages.cpplint */
+    /* pkgs.python39Packages.tmuxp */
+    /* pkgs.python39Packages.vim-vint */
+    /* pkgs.python39Packages.cmake-language-server */
+    # Rust package
+    pkgs.rustfmt
+    pkgs.clippy
+    # BeamPackages
     pkgs.beamPackages.elixir_ls
+    # Node.js packages
+    pkgs.nodePackages.eslint_d
+    pkgs.nodePackages.bash-language-server
+    pkgs.nodePackages.dockerfile-language-server-nodejs
+    pkgs.nodePackages.purescript-language-server
+    pkgs.nodePackages.yaml-language-server
+    pkgs.nodePackages.vls
+    pkgs.nodePackages.vim-language-server
+    pkgs.nodePackages.typescript
+    pkgs.nodePackages.typescript-language-server
+    pkgs.nodePackages.pyright
+    pkgs.nodePackages.svelte-language-server
+    pkgs.nodePackages.purty
+    pkgs.nodePackages.prettier
+    # Not avaliable
+    # pkgs.nodePackages.markdownlint
+    # pkgs.nodePackages.markdownlint-cli
+    # pkgs.nodePackages.prettier-plugin-sh
+    # pkgs.nodePackages.prettier-plugin-toml
+    # pkgs.nodePackages.svelte
+    # pkgs.nodePackages.prettier-plugin-svelte
+    # pkgs.nodePackages.elm-format
+    # pkgs.nodePackages."@angular/language-server"
+    # pkgs.nodePackages."@prisma/language-server"
+    # pkgs.nodePackages.vscode-langservers-extracted
+    # pkgs.nodePackages.graphql
+    # pkgs.nodePackages.graphql-language-service-cli
   ];
 
   # use nix-community cache, run once only
