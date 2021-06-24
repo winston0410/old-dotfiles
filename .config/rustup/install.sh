@@ -1,5 +1,4 @@
 PACKAGES=$(cat <<- END
-rustfmt
 rust-src
 END
 )
@@ -10,4 +9,4 @@ END
 )
 
 rustup component add $PACKAGES
-rustup +nightly component add $NIGHTLY
+# rustup +nightly component add $NIGHTLY

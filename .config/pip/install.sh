@@ -3,10 +3,7 @@ PACKAGES=$(
 		tmuxp
 		vim-vint
 		cpplint
-		yamllint
-		flake8
 		cmake-language-server
-		black
 	END
 )
 
