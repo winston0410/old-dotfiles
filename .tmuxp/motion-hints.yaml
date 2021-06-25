@@ -1,8 +1,0 @@
----
-session_name: "motion-hints"
-windows:
-  - window_name: "init.lua"
-    layout: tiled
-    shell_command_before:
-      - cd ~/.local/share/nvim/site/pack/paqs/start/motion-hints.nvim/lua/motion-hints
-      - vim init.lua

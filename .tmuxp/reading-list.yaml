@@ -1,8 +1,0 @@
----
-session_name: "reading list"
-windows:
-  - window_name: "reading list markdown"
-    layout: tiled
-    shell_command_before:
-      - cd ~/Desktop/reading-list
-      - vim README.md
