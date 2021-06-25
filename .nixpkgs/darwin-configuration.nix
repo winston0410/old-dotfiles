@@ -9,12 +9,14 @@
     }))
   ];
 
-  # nixpkgs.config = {
-  # allowUnsupportedSystem = true;
-  # };
+  nixpkgs.config = {
+    # allowUnsupportedSystem = true;
+    allowUnfree = true;
+  };
 
   # time.timeZone = Hongkong;
   environment.systemPackages = [
+    pkgs.vscode
     pkgs.nixfmt
     # pkgs.alacritty
     pkgs.tmux
@@ -55,10 +57,10 @@
     pkgs.python39Packages.black
     pkgs.python39Packages.flake8
     pkgs.python39Packages.yamllint
-    /* pkgs.python39Packages.cpplint */
-    /* pkgs.python39Packages.tmuxp */
-    /* pkgs.python39Packages.vim-vint */
-    /* pkgs.python39Packages.cmake-language-server */
+    # pkgs.python39Packages.cpplint
+    # pkgs.python39Packages.tmuxp
+    # pkgs.python39Packages.vim-vint
+    # pkgs.python39Packages.cmake-language-server
     # Rust package
     pkgs.rustfmt
     pkgs.clippy
