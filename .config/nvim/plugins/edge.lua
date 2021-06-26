@@ -1,7 +1,8 @@
 local function init(paq)
-	paq({ "folke/tokyonight.nvim" })
-	vim.g.tokyonight_style = "night"
-	vim.cmd("colorscheme tokyonight")
+	paq({ "folke/tokyonight.nvim", config = function ()
+    end})
+        vim.g.tokyonight_style = "night"
+        vim.cmd("colorscheme tokyonight")
 	-- paq {'navarasu/onedark.nvim'}
 	-- vim.cmd 'colorscheme onedark'
 end

@@ -1,7 +1,6 @@
 local function init(paq)
-  paq{'nvim-lua/plenary.nvim'}
-  paq{'nvim-lua/popup.nvim'}
-  paq{'nvim-telescope/telescope.nvim'}
+  paq{'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim'}, { 'nvim-lua/popup.nvim' }}, config = function()
+
   local actions = require('telescope.actions')
   require('telescope').setup{
 	defaults = {
@@ -41,6 +40,9 @@ local function init(paq)
 	  }
 	}
   }
+
+  end}
+
 
 end
 

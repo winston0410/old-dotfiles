@@ -7,7 +7,7 @@ local function mix_format()
 end
 
 local function elm_format()
-    -- Not working
+	-- Not working
 	return {
 		exe = "elm-format",
 		args = { "--", vim.api.nvim_buf_get_name(0) },
@@ -163,7 +163,61 @@ local function hindent()
 end
 
 local function init(paq)
-	paq({ "winston0410/formatter.nvim" })
+	paq({
+		"winston0410/formatter.nvim",
+		config = function()
+			require("formatter").setup({
+				logging = false,
+				filetype = {
+					html = { prettier },
+					css = { prettier },
+					scss = { prettier },
+					sass = { prettier },
+					less = { prettier },
+					javascript = { prettier },
+					typescript = { prettier },
+					javascriptreact = { prettier },
+					typescriptreact = { prettier },
+					["javascript.jsx"] = { prettier },
+					["typescript.jsx"] = { prettier },
+					sh = { shfmt },
+					zsh = { shfmt },
+					markdown = { prettier },
+					json = { prettier },
+					yaml = { prettier },
+					toml = { prettier },
+					vue = { prettier },
+					svelte = { prettier },
+					python = { black },
+					dockerfile = { dockfmt },
+					-- No formatter for make
+					make = {
+						-- prettier
+					},
+					lua = { stylua },
+					teal = { stylua },
+					rust = { rustfmt },
+					nix = { nixfmt },
+					go = { gofmt, goimports },
+					dart = { dartfmt },
+					haskell = { hindent },
+					purescript = { purty },
+					kotlin = { ktlint },
+					fennel = { fnlfmt },
+					cpp = { clang_format },
+					c = { clang_format },
+					cs = { clang_format },
+					swift = { swift_format },
+					r = { styler },
+					elm = { elm_format },
+					elixir = { mix_format },
+				},
+			})
+
+			vim.cmd([[ nnoremap <silent> <C-F> <cmd>write <bar> Format<CR>  ]])
+		end,
+	})
+
 	require("formatter").setup({
 		logging = false,
 		filetype = {
@@ -208,17 +262,11 @@ local function init(paq)
 			swift = { swift_format },
 			r = { styler },
 			elm = { elm_format },
-            elixir = { mix_format },
+			elixir = { mix_format },
 		},
 	})
-	-- vim.cmd([[ nnoremap <silent> <C-F> <cmd>FormatWrite<CR>  ]])
-    vim.cmd([[ nnoremap <silent> <C-F> <cmd>write <bar> Format<CR>  ]])
-	-- vim.api.nvim_exec([[
-	-- augroup FormatAutogroup
-	-- autocmd!
-	-- autocmd BufWritePost *,html,*.css,*.js,*.jsx,*.ts,*.tsx,*.json,*.yaml,*.toml,*.vue,*.svelte,*.sh,*.md,*.scss,*.sass,*.rs,*.lua FormatWrite
-	-- augroup END
-	-- ]], true)
+
+	vim.cmd([[ nnoremap <silent> <C-F> <cmd>write <bar> Format<CR>  ]])
 end
 
 return { init = init }
