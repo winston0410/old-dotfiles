@@ -1,10 +1,10 @@
 package.path = package.path .. ";" .. vim.fn.getenv("HOME") .. "/.config/nvim/?.lua"
 
-local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.system({'git', 'clone', 'https://github.com/winston0410/packer.nvim.git', install_path})
-  vim.api.nvim_command 'packadd packer.nvim'
+	vim.fn.system({ "git", "clone", "https://github.com/winston0410/packer.nvim.git", install_path })
+	vim.api.nvim_command("packadd packer.nvim")
 end
 
 vim.cmd([[ source $HOME/.config/nvim/keymap.vim ]])
@@ -16,9 +16,7 @@ vim.cmd([[packadd packer.nvim]])
 
 require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
-	use({"kyazdani42/nvim-web-devicons", config = function () 
-        print('run')
-    end})
+	use({ "kyazdani42/nvim-web-devicons" })
 	require("plugins.trouble").init(use)
 	require("plugins.treesitter").init(use)
 	require("plugins.edge").init(use)

@@ -9,10 +9,7 @@ local function init(paq)
 		-- auto_open = true,
 		-- auto_close = true
 	}
-	vim.api.nvim_set_keymap("n", "<C-l>",
-	"<cmd>Trouble lsp_document_diagnostics<cr>",
-	{silent = true, noremap = true})
-    end}
+    end }
 end
 
 return {init = init}

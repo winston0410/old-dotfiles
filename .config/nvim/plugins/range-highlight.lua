@@ -3,7 +3,6 @@ local function init(paq)
 
 	require'range-highlight'.setup{}
     end}
-	require'range-highlight'.setup{}
 end
 
 return {

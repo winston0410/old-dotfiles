@@ -19,12 +19,6 @@ local function init(use)
 	})
 	use({ "nvim-treesitter/playground" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
-	local treesitter = require("nvim-treesitter.configs")
-	treesitter.setup({
-		highlight = { enable = true },
-		indent = { enable = true },
-		-- context_commentstring = { enable = true, enable_autocmd = true },
-	})
 end
 
 return { init = init }
