@@ -15,6 +15,9 @@
   };
 
   environment.systemPackages = [
+    pkgs.maven
+    pkgs.gradle
+    # pkgs.android-tools
     pkgs.metals
     pkgs.rust-analyzer
     pkgs.checkmake
@@ -28,7 +31,7 @@
     pkgs.vscode
     pkgs.nixfmt
     pkgs.shfmt
-    pkgs.gcc
+    pkgs.gcc11
     # pkgs.alacritty
     pkgs.tmux
     pkgs.neovim
@@ -72,7 +75,8 @@
     pkgs.python39
     pkgs.adoptopenjdk-hotspot-bin-16
     # pkgs.ruby
-    pkgs.rubyPackages.cocoapods
+    pkgs.cocoapods
+    # pkgs.rubyPackages.cocoapods
     # python package
     pkgs.python39Packages.black
     pkgs.python39Packages.flake8
@@ -130,8 +134,8 @@
     GOPATH = "$HOME/go";
     TMUXP_CONFIGDIR = "$HOME/.tmuxp";
     WEZTERM_CONFIG_FILE = "$HOME/.config/wezterm/config.lua";
-    CC = "$(which gcc-11)";
-    CXX = "$(which g++-11)";
+    CC = "$(which gcc)";
+    CXX = "$(which g++)";
   };
 
   # shell config
@@ -150,10 +154,10 @@
   environment.shellAliases.vim = "nvim";
   environment.shellAliases.vimdiff = "nvim -d";
   environment.shellAliases.ls = "exa --icons";
-  environment.shellAliases.gcc = "gcc-11";
-  environment.shellAliases.cc = "gcc-11";
-  environment.shellAliases."g++" = "g++-11";
-  environment.shellAliases."c++" = "c++-11";
+  environment.shellAliases.gcc-11 = "gcc";
+  # environment.shellAliases.cc = "gcc-11";
+  # environment.shellAliases."g++" = "g++-11";
+  # environment.shellAliases."c++" = "c++-11";
   environment.shellAliases.pip = "pip3.9";
   environment.shellAliases.pfzf =
     "fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'";
@@ -236,6 +240,8 @@
     trustedBinaryCaches = [ "https://cache.nixos.org" ];
     buildCores = 0;
     gc.automatic = true;
+    useSandbox = true;
+    sandboxPaths = [ "/private/tmp" "/private/var/tmp" "/usr/bin/env" ];
   };
 
 }
