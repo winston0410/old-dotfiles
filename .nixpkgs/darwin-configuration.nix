@@ -15,6 +15,7 @@
   };
 
   environment.systemPackages = [
+    pkgs.metals
     pkgs.rust-analyzer
     pkgs.checkmake
     # pkgs.sumneko-lua-language-server
@@ -38,6 +39,7 @@
     pkgs.goimports
     # pkgs.dockfmt
     # pkgs.sqls
+    # pkgs.efm-langserver
     pkgs.ninja
     pkgs.bat
     pkgs.fzf
