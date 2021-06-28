@@ -1,8 +1,8 @@
-PACKAGES=$(
-	cat <<-END
-		    dhall-lsp-server
-		    hindent
-	END
-)
+# PACKAGES=$(
+	# cat <<-END
+		    # dhall-lsp-server
+		    # hindent
+	# END
+# )
 
-stack install $PACKAGES
+# stack install $PACKAGES

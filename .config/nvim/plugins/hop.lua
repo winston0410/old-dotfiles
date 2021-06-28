@@ -1,6 +1,6 @@
-local function init(paq)
-	paq({ "winston0410/hop.nvim" })
+local function init(use)
     -- paq({ "phaazon/hop.nvim" })
+	use({ "winston0410/hop.nvim", config = function() 
 	require("hop").setup({})
 	vim.cmd([[ nmap <Leader><Leader> <cmd>HopChar1<cr>]])
 	vim.cmd([[ vmap <Leader><Leader> <cmd>HopChar1<cr>]])
@@ -15,6 +15,7 @@ local function init(paq)
         -- vim.api.nvim_set_keymap(mode, "t", "<cmd>HopChar1AC<cr>", { noremap = true, silent = true })
         -- vim.api.nvim_set_keymap(mode, "T", "<cmd>HopChar1BC<cr>", { noremap = true, silent = true })
     end
+    end })
 end
 
 return {

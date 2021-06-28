@@ -1,43 +1,48 @@
 package.path = package.path .. ";" .. vim.fn.getenv("HOME") .. "/.config/nvim/?.lua"
 
-vim.cmd [[ source $HOME/.config/nvim/keymap.vim ]]
-vim.cmd [[ source $HOME/.config/nvim/command-alias.vim ]]
-vim.cmd [[ source $HOME/.config/nvim/values.vim ]]
+local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
-vim.cmd 'packadd paq-nvim'         -- Load package
-local paq = require'paq-nvim'.paq  -- Import module and bind `paq` function
-paq{'savq/paq-nvim', opt=true}     -- Let Paq manage itself
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+	vim.fn.system({ "git", "clone", "https://github.com/winston0410/packer.nvim.git", install_path })
+	vim.api.nvim_command("packadd packer.nvim")
+end
 
-paq{'wbthomason/packer.nvim'}
-require('plugins.lspconfig').init(paq)
-require('plugins.smart_number').setup()
--- require('plugins.extmarks').setup()
-require('plugins.yank_highlight').setup()
-paq{'kyazdani42/nvim-web-devicons'}
-require('plugins.completion').init(paq)
-require('plugins.trouble').init(paq)
-require('plugins.treesitter').init(paq)
-require('plugins.edge').init(paq)
-require('plugins.hop').init(paq)
-require('plugins.gitsigns').init(paq)
-require('plugins.indent-blankline').init(paq)
-require('plugins.telescope').init(paq)
-require('plugins.galaxyline').init(paq)
-require('plugins.formatter').init(paq)
-require('plugins.colorizer').init(paq)
--- require('plugins.numb').init(paq)
-require('plugins.range-highlight').init(paq)
-require('plugins.mark-highlight').init(paq)
-require('plugins.better-O').init(paq)
-require('plugins.motion').init(paq)
-require('plugins.reverse-J').init(paq)
-require('plugins.commented').init(paq)
-require('plugins.mark-radar').init(paq)
--- require('plugins.cursorline').init(paq)
--- require('plugins.lightspeed').init(paq)
--- require('plugins.nvim_context_vt').init(paq)
--- require('plugins.symbols_outline').init(paq)
--- require('plugins.motion-hints').init(paq)
-require('custom-filetypes')
+vim.cmd([[ source $HOME/.config/nvim/keymap.vim ]])
+vim.cmd([[ source $HOME/.config/nvim/command-alias.vim ]])
+vim.cmd([[ source $HOME/.config/nvim/values.vim ]])
+require("custom-filetypes")
 
-vim.cmd [[ source $HOME/.config/nvim/highlight.vim ]]
+vim.cmd([[packadd packer.nvim]])
+
+require("packer").startup(function(use)
+	use("wbthomason/packer.nvim")
+	use({ "kyazdani42/nvim-web-devicons" })
+	require("plugins.trouble").init(use)
+	require("plugins.treesitter").init(use)
+	require("plugins.lspconfig").init(use)
+	require("plugins.edge").init(use)
+	require("plugins.hop").init(use)
+	require("plugins.gitsigns").init(use)
+	require("plugins.indent-blankline").init(use)
+	require("plugins.telescope").init(use)
+	require("plugins.galaxyline").init(use)
+	require("plugins.formatter").init(use)
+	require("plugins.colorizer").init(use)
+	require("plugins.completion").init(use)
+	-- require('plugins.numb').init(use)
+	require("plugins.range-highlight").init(use)
+	require("plugins.better-O").init(use)
+	-- require('plugins.reverse-J').init(use)
+	require("plugins.commented").init(use)
+	require("plugins.mark-radar").init(use)
+end)
+
+require("plugins.smart_number").setup()
+require("plugins.yank_highlight").setup()
+-- require('plugins.cursorline').init(use)
+-- require('plugins.lightspeed').init(use)
+-- require('plugins.nvim_context_vt').init(use)
+-- require('plugins.symbols_outline').init(use)
+-- require('plugins.motion-hints').init(use)
+
+vim.cmd([[ source $HOME/.config/nvim/highlight.vim ]])

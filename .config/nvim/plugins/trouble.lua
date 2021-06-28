@@ -1,5 +1,6 @@
 local function init(paq)
-	paq {'folke/trouble.nvim'}
+	paq {'folke/trouble.nvim', config = function ()
+
 	require'trouble'.setup {
 		position = "left",
 		width = 30,
@@ -8,9 +9,7 @@ local function init(paq)
 		-- auto_open = true,
 		-- auto_close = true
 	}
-	vim.api.nvim_set_keymap("n", "<C-l>",
-	"<cmd>Trouble lsp_document_diagnostics<cr>",
-	{silent = true, noremap = true})
+    end }
 end
 
 return {init = init}

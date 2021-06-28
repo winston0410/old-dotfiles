@@ -1,2 +1,2 @@
-cargo install du-dust
-cargo install stylua
+# cargo install du-dust
+# cargo install stylua
