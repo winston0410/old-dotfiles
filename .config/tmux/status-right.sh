@@ -1,6 +1,6 @@
 #!/bin/bash
 function date_time() {
-  printf "UK=%s " "$(date +'%H:%M')"
+  printf "CUR %s " "$(date +'%H:%M')"
 }
 
 function main() {
