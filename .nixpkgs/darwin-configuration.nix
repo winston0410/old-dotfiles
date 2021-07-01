@@ -15,9 +15,9 @@
   };
 
   environment.systemPackages = [
-    pkgs.maven
-    pkgs.gradle
+    pkgs.lorri
     # pkgs.android-tools
+    pkgs.unixtools.fdisk
     pkgs.metals
     pkgs.rust-analyzer
     pkgs.checkmake
@@ -89,7 +89,7 @@
     pkgs.dust
     pkgs.rustfmt
     pkgs.clippy
-    pkgs.stylua
+    # pkgs.stylua
     # BeamPackages
     pkgs.beamPackages.elixir_ls
     # Node.js packages
